@@ -54,6 +54,13 @@ h1 {
   background: linear-gradient(rgba(65, 105, 225, 0.555), rgba(152, 12, 207, 0.507));
 }
 
+@media screen and (max-height: 1100px) {
+  .box {
+    height: 22vh;
+    width: 70vw;
+  }
+}
+
 h2 {
   font-size: 0.8em;
   font-weight: 800;
@@ -93,14 +100,26 @@ input[type=radio] {
 }
 
 .resultat {
-  width: 50vw;
+  width: 70vw;
   height: 20vh;
   border: 2px solid black;
-  margin-bottom: 1vmin;
+  margin-bottom: 5vmin;
   position: relative;
   -webkit-box-shadow: 0px 0px 10px black;
           box-shadow: 0px 0px 10px black;
   background: linear-gradient(150deg, rgba(26, 26, 104, 0.877), rgba(0, 225, 255, 0.534));
+}
+
+@media screen and (max-height: 1100px) {
+  .resultat {
+    height: 32vh;
+  }
+}
+
+@media screen and (max-height: 700px) {
+  .resultat {
+    height: 26vh;
+  }
 }
 
 h3 {
@@ -109,6 +128,31 @@ h3 {
   margin-right: 20%;
   width: 60%;
   text-align: center;
+}
+
+.resultAppear {
+  color: orange;
+  -webkit-text-decoration: dotted;
+          text-decoration: dotted;
+  text-align: center;
+}
+
+.aide, .note {
+  margin-top: 1.5vmin;
+  color: violet;
+  font-weight: 700;
+  text-align: center;
+}
+
+@media screen and (max-height: 1100px) {
+  .aide, .note {
+    margin-top: 3vmin;
+  }
+}
+
+.note {
+  font-size: 2em;
+  text-shadow: 0px 0px 10px orange;
 }
 
 .echec {
