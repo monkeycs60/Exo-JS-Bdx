@@ -3,7 +3,7 @@ let tableauResult = [];
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    console.log(document.querySelector('input'));
+    console.log(document.querySelector('input').name);
     console.log(document.querySelector('input[name="q1"]').value);
     
     // console.log(document.getElementById('btn2').value);
