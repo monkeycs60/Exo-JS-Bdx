@@ -14,7 +14,6 @@ body {
   background: linear-gradient(violet, orange);
   background-attachment: fixed;
   overflow-x: hidden;
-  overflow-y: hidden;
 }
 
 .container {
