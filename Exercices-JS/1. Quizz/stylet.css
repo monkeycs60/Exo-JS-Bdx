@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+*, ::before, ::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+  width: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(violet), to(orange));
+  background: linear-gradient(violet, orange);
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+.container {
+  font-size: calc(2vmin + 5px);
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5vmin;
+}
+
+h1 {
+  padding-top: 2vmin;
+  display: inline-block;
+  font-family: 'Russo One', sans-serif;
+  font-size: 2em;
+  text-shadow: 1px 1px 20px orange;
+}
+
+.box {
+  border: 2px solid black;
+  -webkit-box-shadow: 0px 0px 10px black;
+          box-shadow: 0px 0px 10px black;
+  height: 10vmin;
+  margin-top: 5%;
+  padding: 5px;
+  width: 40vw;
+  height: 20vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(65, 105, 225, 0.555)), to(rgba(152, 12, 207, 0.507)));
+  background: linear-gradient(rgba(65, 105, 225, 0.555), rgba(152, 12, 207, 0.507));
+}
+
+h2 {
+  font-size: 0.8em;
+  font-weight: 800;
+  margin-bottom: 2vmin;
+}
+
+label {
+  display: block;
+  margin-top: 1vmin;
+}
+
+input[type=radio] {
+  border: 0px;
+  width: 10%;
+  height: 2vmin;
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+}
+
+.btn-valid {
+  margin-left: 50%;
+  margin-right: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 30%;
+  margin-top: 1.5em;
+  height: 4%;
+  font-size: 1em;
+  background: -webkit-gradient(linear, left top, left bottom, from(grey), to(royalblue));
+  background: linear-gradient(grey, royalblue);
+  -webkit-transition: background 0.6s ease-in-out;
+  transition: background 0.6s ease-in-out;
+}
+
+.btn-valid:hover {
+  background: lightblue;
+}
+
+.resultat {
+  width: 50vw;
+  height: 20vh;
+  border: 2px solid black;
+  margin-bottom: 1vmin;
+  position: relative;
+  -webkit-box-shadow: 0px 0px 10px black;
+          box-shadow: 0px 0px 10px black;
+  background: linear-gradient(150deg, rgba(26, 26, 104, 0.877), rgba(0, 225, 255, 0.534));
+}
+
+h3 {
+  margin-top: 2%;
+  margin-left: 20%;
+  margin-right: 20%;
+  width: 60%;
+  text-align: center;
+}
+
+.echec {
+  -webkit-animation: echec 0.3s ease-in-out;
+          animation: echec 0.3s ease-in-out;
+}
+
+@-webkit-keyframes echec {
+  0% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+  33% {
+    -webkit-transform: translate(5px, 0px);
+            transform: translate(5px, 0px);
+  }
+  66% {
+    -webkit-transform: translate(-5px, 0px);
+            transform: translate(-5px, 0px);
+  }
+  100% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+}
+
+@keyframes echec {
+  0% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+  33% {
+    -webkit-transform: translate(5px, 0px);
+            transform: translate(5px, 0px);
+  }
+  66% {
+    -webkit-transform: translate(-5px, 0px);
+            transform: translate(-5px, 0px);
+  }
+  100% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+}
+/*# sourceMappingURL=stylet.css.map */

@@ -1,0 +1,48 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-size: 100%;
+  }
+
+  body {
+      background: linear-gradient(55deg, cyan, orange 70%);
+      height: 100vh;
+      width: 100vw;
+  }
+  .container {
+width: 100%;
+height: 50%;
+display: flex;
+flex-flow: row wrap;
+justify-content: center;
+align-items: center;
+  }
+.boxbtn {
+    display: block;
+    width: 100%;
+    
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+      
+}
+button {
+   background: radial-gradient(rgb(255, 187, 0), rgb(17, 156, 156), rgb(29, 63, 156));
+   width: 200px;
+   height: 60px;
+   border-radius: 10px;
+   border: 2px ridge brown;
+}
+.modal {
+    visibility: hidden;
+    background: linear-gradient(20deg, orange, rgb(212, 18, 203));
+    height: 38vh;
+    width: 50%;
+    text-align: justify;
+    padding: 15px;
+    border-radius: 15px;
+
+}

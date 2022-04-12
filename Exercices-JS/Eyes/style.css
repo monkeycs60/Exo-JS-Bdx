@@ -1,0 +1,65 @@
+*, ::before, ::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background: -webkit-gradient(linear, left top, right top, from(#30e8bf), to(#ff8235));
+  background: linear-gradient(to right, #30e8bf, #ff8235);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.bandeau {
+  height: 30vh;
+  width: 100vw;
+  background: black;
+  position: relative;
+}
+
+.eyes {
+  position: absolute;
+  height: 70%;
+  width: 15%;
+  background: white;
+  border-radius: 45%;
+  overflow: hidden;
+}
+
+#oeil1 {
+  left: 33%;
+  top: 15%;
+}
+
+.pupille1, .pupille2 {
+  background: black;
+  height: 20%;
+  width: 20%;
+  border-radius: 50%;
+}
+
+#oeil2 {
+  right: 33%;
+  top: 15%;
+}
+
+.ball {
+  height: 40px;
+  width: 40px;
+  background: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  border-radius: 50%;
+}
+/*# sourceMappingURL=style.css.map */

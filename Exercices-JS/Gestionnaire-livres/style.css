@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap");
+*, ::before, ::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-size: 100%;
+}
+
+html {
+  background: linear-gradient(150deg, #022F40, #0075C4 60%, #022F40);
+  height: 100vh;
+  min-height: 100vh;
+  background-attachment: fixed;
+}
+
+body {
+  font-size: calc(2vmin + 5px);
+  overflow-x: hidden;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+.success, .error {
+  position: absolute;
+  right: -10vw;
+  color: white;
+  padding: 5px;
+  margin: 5px 0 15px 0;
+  width: 25%;
+  -webkit-animation: popup 3s 1 linear;
+          animation: popup 3s 1 linear;
+}
+
+@media screen and (max-width: 900px) {
+  .success, .error {
+    right: 0;
+    left: 20vw;
+  }
+}
+
+@-webkit-keyframes popup {
+  0% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+  }
+  25% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+    font-weight: normal;
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    font-weight: normal;
+  }
+  75% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+    opacity: 0.7;
+  }
+  100% {
+    -webkit-transform: scale(0.3);
+            transform: scale(0.3);
+    opacity: 0.4;
+  }
+}
+
+@keyframes popup {
+  0% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+  }
+  25% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+    font-weight: normal;
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    font-weight: normal;
+  }
+  75% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+    opacity: 0.7;
+  }
+  100% {
+    -webkit-transform: scale(0.3);
+            transform: scale(0.3);
+    opacity: 0.4;
+  }
+}
+
+.success {
+  background: green;
+}
+
+.error {
+  background: red;
+}
+
+form {
+  height: 70vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+h1 {
+  font-family: 'Source Code Pro', monospace;
+  padding-top: 0.5em;
+  background: linear-gradient(160deg, #ff9900, #f88603);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 2px rgba(255, 81, 0, 0.459);
+}
+
+label {
+  margin-top: 2.5%;
+  width: 60%;
+  text-align: center;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.3em;
+  color: black;
+}
+
+input {
+  width: 100%;
+  height: 30px;
+  background: linear-gradient(#cea3a3, white) padding-box, linear-gradient(80deg, #0a8de4 0%, #ff5e00 50%, #022F40 100%) border-box;
+  border-radius: 15px;
+  border: 3px solid transparent;
+  text-align: center;
+  position: relative;
+  color: #6f0fec;
+  outline: none;
+}
+
+input::-webkit-input-placeholder {
+  color: grey;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+input:-ms-input-placeholder {
+  color: grey;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+input::-ms-input-placeholder {
+  color: grey;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+input::placeholder {
+  color: grey;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+input:focus {
+  color: #ff7b00;
+  font-weight: 800;
+  outline: 3px solid orangered;
+  border: none;
+}
+
+.btn1 {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 3vmin;
+  font-weight: 500;
+  color: black;
+  margin-top: 2.5%;
+  height: 40px;
+  width: 30%;
+  background: linear-gradient(60deg, #0a8de4 0%, #ff5e00 50%, #022F40 100%) border-box;
+  border-radius: 10px;
+  border: 2px ridge #022F40;
+}
+
+.tableau-livre {
+  border-top: 5px dashed orangered;
+}
+
+.delete {
+  width: 30px;
+  height: 30px;
+  background: red;
+  border-radius: 50%;
+  border: 1px solid white;
+  font-weight: 800;
+}
+
+table {
+  padding-top: 0.5em;
+  width: 90%;
+}
+
+th {
+  width: 30%;
+  text-align: center;
+}
+
+td {
+  text-align: center;
+}
+/*# sourceMappingURL=style.css.map */
