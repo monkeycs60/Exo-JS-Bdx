@@ -8,12 +8,17 @@ const tabReponse = ['c', 'a', 'b', 'a', 'c'];
 let tabBool = [];
 
 
+
 let compteurScore = 0;
 
 
 let questionBox = document.querySelectorAll('.box');
 
-
+questionBox.forEach((element) => {
+    element.addEventListener("click", () => {
+        element.style.background = "grey";
+    })
+});
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -87,8 +92,8 @@ if (compteurScore === 0) {
     tabBool = [];
     compteurScore = 0;
   
-  
     
 })
+
 
 
