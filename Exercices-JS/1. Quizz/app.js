@@ -46,6 +46,9 @@ form.addEventListener('submit', (e) => {
         } else if (tabBool[k] === false){
             questionBox[k].style.background = "red";
             questionBox[k].classList.add('echec');
+            setTimeout(() => {
+                questionBox[k].classList.remove('echec');
+            }, 500);
         }
     }
     console.log(tableauResult);
