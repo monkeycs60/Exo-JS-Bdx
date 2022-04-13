@@ -122,19 +122,20 @@ input[type=radio] {
   }
 }
 
-h3 {
-  margin-top: 2%;
-  margin-left: 20%;
-  margin-right: 20%;
-  width: 60%;
-  text-align: center;
-}
-
 .resultAppear {
+  padding: 1%;
+  text-align: center;
+  width: 100%;
+  width: 100%;
   color: orange;
   -webkit-text-decoration: dotted;
           text-decoration: dotted;
-  text-align: center;
+}
+
+@media screen and (max-height: 1100px) {
+  .resultAppear {
+    padding: 3%;
+  }
 }
 
 .aide, .note {
