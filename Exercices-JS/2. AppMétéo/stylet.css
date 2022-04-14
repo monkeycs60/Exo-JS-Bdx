@@ -1,0 +1,82 @@
+*, ::before, ::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(50deg, #3b0404, #272626);
+  overflow: hidden;
+  font-size: calc(2vmin + 5px);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 3fr 1fr 1fr;
+      grid-template-rows: 1fr 3fr 1fr 1fr;
+  -ms-grid-columns: (1fr)[7];
+      grid-template-columns: repeat(7, 1fr);
+  width: 50%;
+  height: 60%;
+  margin: auto;
+  margin-top: 8%;
+  background: green;
+}
+
+.title {
+  background: blue;
+  width: 100%;
+  height: 100%;
+  font-size: 2em;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 7;
+  grid-column: 1 / span 7;
+  text-align: center;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.weatherPannel {
+  background: yellow;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 7;
+  grid-column: 1 / span 7;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  height: 100%;
+  width: 100%;
+}
+
+.weatherIcon {
+  background: red;
+  height: 100%;
+  width: 50%;
+}
+
+.weatherCurrentData {
+  background: violet;
+  height: 100%;
+  width: 50%;
+}
+
+.h {
+  border: 1px solid yellow;
+}
+
+.d {
+  border: 1px solid cyan;
+}
+/*# sourceMappingURL=stylet.css.map */

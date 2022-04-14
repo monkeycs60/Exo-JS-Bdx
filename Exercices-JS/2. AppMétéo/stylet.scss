@@ -1,0 +1,75 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+height: 100vh;
+width: 100vw;
+background: linear-gradient(50deg, rgb(59, 4, 4), rgb(39, 38, 38));
+overflow: hidden;
+font-size: calc(2vmin + 5px);
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 1fr 3fr 1fr 1fr;
+    grid-template-columns: repeat(7, 1fr);
+width: 50%;
+height: 60%;
+margin: auto;
+margin-top: 8%;
+background: green;
+}
+.title {
+    background: blue;
+    width: 100%;
+    height: 100%;
+    font-size: 2em;
+    grid-column: 1 / span 7;
+    text-align: center;
+    display: grid;
+    align-items: center;
+    
+}   
+.weatherPannel {
+    background: yellow;
+    grid-column: 1 / span 7;
+    display: flex;
+    flex-flow: row nowrap;
+    height: 100%;
+    width: 100%;
+
+}
+.weatherIcon {
+    
+    background: red;
+  height: 100%;
+    width: 50%;
+
+}
+.weatherCurrentData {
+    background: violet;
+    height: 100%;
+    width: 50%;
+
+}
+
+.h {
+    border: 1px solid yellow;
+}
+
+.d {
+    border: 1px solid cyan;
+}
+
+// @for $i from 1 to 8 {
+//     .h#{$i} {
+//     display: grid;
+//     grid-row: 3;
+//     grid-column: $i;
+//     height: 100%;
+//     }
+// }
