@@ -72,11 +72,81 @@ body {
   width: 50%;
 }
 
+.old {
+  font-family: fantasy;
+  font-size: 2em;
+  color: white;
+  margin-top: 3%;
+}
+
 .h {
   border: 1px solid yellow;
 }
 
 .d {
   border: 1px solid cyan;
+}
+
+.h1 {
+  background: #0f2525;
+}
+
+.h2 {
+  background: #1e2525;
+}
+
+.h3 {
+  background: #2d2525;
+}
+
+.h4 {
+  background: #3c2525;
+}
+
+.h5 {
+  background: #4b2525;
+}
+
+.h6 {
+  background: #5a2525;
+}
+
+.h7 {
+  background: #692525;
+}
+
+.d1 {
+  background: #0f0a64;
+  border: 1px solid blueviolet;
+}
+
+.d2 {
+  background: #1e1464;
+  border: 1px solid blueviolet;
+}
+
+.d3 {
+  background: #2d1e64;
+  border: 1px solid blueviolet;
+}
+
+.d4 {
+  background: #3c2864;
+  border: 1px solid blueviolet;
+}
+
+.d5 {
+  background: #4b3264;
+  border: 1px solid blueviolet;
+}
+
+.d6 {
+  background: #5a3c64;
+  border: 1px solid blueviolet;
+}
+
+.d7 {
+  background: #694664;
+  border: 1px solid blueviolet;
 }
 /*# sourceMappingURL=stylet.css.map */

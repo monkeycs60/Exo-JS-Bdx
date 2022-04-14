@@ -54,8 +54,16 @@ background: green;
     background: violet;
     height: 100%;
     width: 50%;
-
 }
+.old {
+    font-family: fantasy;
+    font-size: 2em;
+    color: white;
+    margin-top: 3%;
+}
+
+
+
 
 .h {
     border: 1px solid yellow;
@@ -65,11 +73,14 @@ background: green;
     border: 1px solid cyan;
 }
 
-// @for $i from 1 to 8 {
-//     .h#{$i} {
-//     display: grid;
-//     grid-row: 3;
-//     grid-column: $i;
-//     height: 100%;
-//     }
-// }
+@for $i from 1 to 8 {
+    .h#{$i} {
+   background: rgb(15*$i, 37, 37);
+    }
+}
+@for $j from 1 to 8 {
+    .d#{$j} {
+   background: rgb(15*$j, 10*$j, 100);
+   border: 1px solid blueviolet;
+    }
+}
