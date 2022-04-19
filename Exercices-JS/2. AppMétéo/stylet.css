@@ -12,6 +12,7 @@ body {
   overflow: hidden;
   font-size: calc(2vmin + 5px);
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  cursor: pointer;
 }
 
 .container {
@@ -25,11 +26,10 @@ body {
   height: 60%;
   margin: auto;
   margin-top: 8%;
-  background: green;
+  background: linear-gradient(45deg, blue 20%, #df88df 60%, #e731de 100%);
 }
 
 .title {
-  background: blue;
   width: 100%;
   height: 100%;
   font-size: 2em;
@@ -42,10 +42,12 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border: 1px solid white;
+  -webkit-box-shadow: 0px 0px 10px 2px white;
+          box-shadow: 0px 0px 10px 2px white;
 }
 
 .weatherPannel {
-  background: yellow;
   -ms-grid-column: 1;
   -ms-grid-column-span: 7;
   grid-column: 1 / span 7;
@@ -64,13 +66,11 @@ img {
 }
 
 .weatherIcon {
-  background: red;
   max-height: 50vh;
   width: 50%;
 }
 
 .weatherCurrentData {
-  background: violet;
   max-height: 50vh;
   width: 50%;
 }
@@ -84,15 +84,28 @@ img {
 }
 
 .h {
-  border: 1px solid yellow;
+  border: 1px solid white;
+  font-size: 1em;
+}
+
+@media screen and (max-width: 1500px) {
+  .h {
+    font-size: 0.7em;
+  }
 }
 
 .d {
-  border: 1px solid cyan;
+  border: 1px solid white;
+  font-size: 1em;
+}
+
+@media screen and (max-width: 1500px) {
+  .d {
+    font-size: 0.7em;
+  }
 }
 
 .h1 {
-  background: #0f2525;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -109,7 +122,6 @@ img {
 }
 
 .h2 {
-  background: #1e2525;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -126,7 +138,6 @@ img {
 }
 
 .h3 {
-  background: #2d2525;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -143,7 +154,6 @@ img {
 }
 
 .h4 {
-  background: #3c2525;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -160,7 +170,6 @@ img {
 }
 
 .h5 {
-  background: #4b2525;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -177,7 +186,6 @@ img {
 }
 
 .h6 {
-  background: #5a2525;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -194,7 +202,6 @@ img {
 }
 
 .h7 {
-  background: #692525;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -211,8 +218,7 @@ img {
 }
 
 .d1 {
-  background: #0f0a64;
-  border: 1px solid blueviolet;
+  border: 1px solid white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -229,8 +235,7 @@ img {
 }
 
 .d2 {
-  background: #1e1464;
-  border: 1px solid blueviolet;
+  border: 1px solid white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -247,8 +252,7 @@ img {
 }
 
 .d3 {
-  background: #2d1e64;
-  border: 1px solid blueviolet;
+  border: 1px solid white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -265,8 +269,7 @@ img {
 }
 
 .d4 {
-  background: #3c2864;
-  border: 1px solid blueviolet;
+  border: 1px solid white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -283,8 +286,7 @@ img {
 }
 
 .d5 {
-  background: #4b3264;
-  border: 1px solid blueviolet;
+  border: 1px solid white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -301,8 +303,7 @@ img {
 }
 
 .d6 {
-  background: #5a3c64;
-  border: 1px solid blueviolet;
+  border: 1px solid white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -319,8 +320,7 @@ img {
 }
 
 .d7 {
-  background: #694664;
-  border: 1px solid blueviolet;
+  border: 1px solid white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
