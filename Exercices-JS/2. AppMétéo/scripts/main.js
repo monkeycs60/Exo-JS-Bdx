@@ -2,6 +2,13 @@
 navigator.geolocation.getCurrentPosition(success);
 
 let caseHour = document.getElementsByClassName("h");
+let caseDay = document.getElementsByClassName("d");
+
+let jour = new Date().getDay();
+console.log(jour);
+const semaine = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
+
+
 
 function success(pos) {
     
@@ -137,6 +144,16 @@ fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${lon
         }
         caseHour[l].innerHTML = `<p> ${heureAug} h </p>`;
         caseHour[l].innerHTML += `<div> ${Math.round(data.hourly[l*3].temp)}°C </div>`;
+        
+        let indiceSemaine = jour + l - 1;
+        if (indiceSemaine > 6) {
+            indiceSemaine -= 7;
+        }
+        let jourPrecis = semaine[indiceSemaine];
+        
+        caseDay[l].innerHTML = `<p> ${jourPrecis} </p>`;
+        caseDay[l].innerHTML += `<div> ${Math.round(data.daily[l].temp.day)}°C </div>`;
+        console.log(jourPrecis);
     }
 
 })
@@ -145,9 +162,4 @@ fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${lon
 
 
 
-// const dhr = new XMLHttpRequest();
-// dhr.open('GET', 'https://api.openweathermap.org/data/2.5/weather?lat=44.8&lon=-0.579&appid=ad38d891525e48eb7f62af8273be531f&units=metric&lang=fr');
-// dhr.responseType = 'json';
-// dhr.onload = function(){
-// }
-// dhr.send();
+

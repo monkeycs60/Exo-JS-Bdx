@@ -79,7 +79,10 @@ img {
 @for $i from 1 to 8 {
     .h#{$i} {
    background: rgb(15*$i, 37, 37);
-   text-align: center;
+   display: flex;
+   flex-flow: column;
+   justify-content: center;
+   align-items: center;
    
     }
 }
@@ -87,5 +90,9 @@ img {
     .d#{$j} {
    background: rgb(15*$j, 10*$j, 100);
    border: 1px solid blueviolet;
+   display: flex;
+   flex-flow: column;
+   justify-content: center;
+   align-items: center;
     }
 }
