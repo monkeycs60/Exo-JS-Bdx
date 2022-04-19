@@ -5,7 +5,6 @@ let caseHour = document.getElementsByClassName("h");
 let caseDay = document.getElementsByClassName("d");
 
 let jour = new Date().getDay();
-console.log(jour);
 const semaine = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
 
 
@@ -29,7 +28,7 @@ const xhr = new XMLHttpRequest();
 xhr.open('GET', `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=ad38d891525e48eb7f62af8273be531f&units=metric&lang=fr`);
 xhr.responseType = 'json';
 xhr.onload = function(){
-    console.log(xhr.response);
+   
     const icone = xhr.response.weather[0].icon;
 
     let weatherIcon = document.getElementsByClassName("weatherIcon");
@@ -132,8 +131,7 @@ fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${lon
     return reponse.json();
 })
 .then((data) => {
-    console.log(data);
-    console.log(data.hourly[0]);
+   
     let heureActuelle = new Date().getHours();
     for (let l = 0; l < 7; l++) {
         let heureAug = heureActuelle + l * 3;
@@ -153,7 +151,7 @@ fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${lon
         
         caseDay[l].innerHTML = `<p> ${jourPrecis} </p>`;
         caseDay[l].innerHTML += `<div> ${Math.round(data.daily[l].temp.day)}°C </div>`;
-        console.log(jourPrecis);
+        
     }
 
 })

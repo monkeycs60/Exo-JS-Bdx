@@ -12,7 +12,10 @@ body {
   overflow: hidden;
   font-size: calc(2vmin + 5px);
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .container {
@@ -27,6 +30,13 @@ body {
   margin: auto;
   margin-top: 8%;
   background: linear-gradient(45deg, blue 20%, #df88df 60%, #e731de 100%);
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    width: 80%;
+    height: 80%;
+  }
 }
 
 .title {
@@ -59,10 +69,22 @@ body {
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
   max-height: 40vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 img {
   max-width: 20vw;
+}
+
+@media screen and (max-width: 900px) {
+  img {
+    max-width: 35vw;
+  }
 }
 
 .weatherIcon {
@@ -83,24 +105,13 @@ img {
   max-height: 30vh;
 }
 
-.h {
+.h, .d {
   border: 1px solid white;
   font-size: 1em;
 }
 
 @media screen and (max-width: 1500px) {
-  .h {
-    font-size: 0.7em;
-  }
-}
-
-.d {
-  border: 1px solid white;
-  font-size: 1em;
-}
-
-@media screen and (max-width: 1500px) {
-  .d {
+  .h, .d {
     font-size: 0.7em;
   }
 }

@@ -11,7 +11,7 @@ background: linear-gradient(50deg, rgb(59, 4, 4), rgb(39, 38, 38));
 overflow: hidden;
 font-size: calc(2vmin + 5px);
 font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-cursor: pointer;
+user-select: none;
 }
 
 .container {
@@ -22,7 +22,11 @@ width: 50%;
 height: 60%;
 margin: auto;
 margin-top: 8%;
-background: linear-gradient(45deg, blue 20%, rgb(223, 136, 223) 60%, rgb(231, 49, 222) 100%)
+background: linear-gradient(45deg, blue 20%, rgb(223, 136, 223) 60%, rgb(231, 49, 222) 100%);
+@media screen and (max-width: 900px) {
+    width: 80%;
+    height: 80%;
+}
 }
 .title {
     
@@ -41,11 +45,17 @@ background: linear-gradient(45deg, blue 20%, rgb(223, 136, 223) 60%, rgb(231, 49
     grid-column: 1 / span 7;
     display: flex;
     flex-flow: row nowrap;
-   max-height: 40vh;
+    max-height: 40vh;
+    justify-content: center;
+    align-items: center;
+   
 
 }
 img {
     max-width: 20vw;
+    @media screen and (max-width: 900px) {
+        max-width: 35vw;
+    }
 }
 .weatherIcon {
     
@@ -78,11 +88,7 @@ img {
 }
 
 .d {
-    border: 1px solid white;
-    font-size: 1em;
-    @media screen and (max-width: 1500px) {
-        font-size: 0.7em;
-    }
+    @extend .h
 }
 
 @for $i from 1 to 8 {
