@@ -8,7 +8,6 @@ let jour = new Date().getDay();
 const semaine = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
 
 
-
 function success(pos) {
     
     const latitude = pos.coords.latitude;
@@ -16,11 +15,7 @@ function success(pos) {
     AppelAPI(longitude, latitude);
 }
 
-
 function AppelAPI(longitude, latitude) {
-    
-    
-
 
 /// Premier Appel API pour la meteo ACTUELLE (à 0s)
 
@@ -118,11 +113,6 @@ xhr.onload = function(){
     todayData[0].innerHTML = `<div class='old'> ${descriptionWeather} </div>`;
     todayData[0].innerHTML += `<div class='old'> ${temperatureArrondie}°C </div>`
     todayData[0].innerHTML += `<div class='old'> ${ville} </div>`
-    
-
-
-    
-
 }
 xhr.send();
 

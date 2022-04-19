@@ -30,7 +30,7 @@ body {
   margin: auto;
   margin-top: 8%;
   border: 1px solid white;
-  background: linear-gradient(45deg, blue 20%, #df88df 60%, #e731de 100%);
+  background: linear-gradient(45deg, blue 20%, #f16cf1 60%, #f1b1ee 100%);
 }
 
 @media screen and (max-width: 900px) {
