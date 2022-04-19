@@ -1,8 +1,28 @@
+// On géocalise l'utilisateur
+navigator.geolocation.getCurrentPosition(success);
+
+let caseHour = document.getElementsByClassName("h");
+
+function success(pos) {
+    
+    const latitude = pos.coords.latitude;
+    const longitude = pos.coords.longitude;
+    AppelAPI(longitude, latitude);
+}
+
+
+function AppelAPI(longitude, latitude) {
+    
+    
+
+
+/// Premier Appel API pour la meteo ACTUELLE (à 0s)
+
 const xhr = new XMLHttpRequest();
-xhr.open('GET', 'https://api.openweathermap.org/data/2.5/weather?lat=44.8&lon=-0.579&appid=ad38d891525e48eb7f62af8273be531f&units=metric&lang=fr');
+xhr.open('GET', `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=ad38d891525e48eb7f62af8273be531f&units=metric&lang=fr`);
 xhr.responseType = 'json';
 xhr.onload = function(){
-    
+    console.log(xhr.response);
     const icone = xhr.response.weather[0].icon;
 
     let weatherIcon = document.getElementsByClassName("weatherIcon");
@@ -93,6 +113,42 @@ xhr.onload = function(){
     todayData[0].innerHTML += `<div class='old'> ${temperatureArrondie}°C </div>`
     todayData[0].innerHTML += `<div class='old'> ${ville} </div>`
     
+
+
+    
+
+}
+xhr.send();
+
+fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude={part}&appid=ad38d891525e48eb7f62af8273be531f&units=metric&lang=fr`)
+.then((reponse) => {
+    return reponse.json();
+})
+.then((data) => {
+    console.log(data);
+    console.log(data.hourly[0]);
+    let heureActuelle = new Date().getHours();
+    for (let l = 0; l < 7; l++) {
+        let heureAug = heureActuelle + l * 3;
+        console.log(heureAug[0]);
+        if (heureAug === 24) {
+            heureAug = "00";
+        } else if (heureAug > 24){
+           heureAug -= 24;
+        }
+        caseHour[l].innerHTML = `<p> ${heureAug} h </p>`;
+    }
+
+
+})
+
 }
 
-xhr.send();
+
+
+// const dhr = new XMLHttpRequest();
+// dhr.open('GET', 'https://api.openweathermap.org/data/2.5/weather?lat=44.8&lon=-0.579&appid=ad38d891525e48eb7f62af8273be531f&units=metric&lang=fr');
+// dhr.responseType = 'json';
+// dhr.onload = function(){
+// }
+// dhr.send();
