@@ -39,20 +39,22 @@ background: green;
     grid-column: 1 / span 7;
     display: flex;
     flex-flow: row nowrap;
-    height: 100%;
-    width: 100%;
+   max-height: 40vh;
 
+}
+img {
+    max-width: 20vw;
 }
 .weatherIcon {
     
     background: red;
-  height: 100%;
+    max-height: 50vh;
     width: 50%;
 
 }
 .weatherCurrentData {
     background: violet;
-    height: 100%;
+    max-height: 50vh;
     width: 50%;
 }
 .old {
@@ -60,6 +62,7 @@ background: green;
     font-size: 2em;
     color: white;
     margin-top: 3%;
+    max-height: 30vh;
 }
 
 
@@ -76,6 +79,8 @@ background: green;
 @for $i from 1 to 8 {
     .h#{$i} {
    background: rgb(15*$i, 37, 37);
+   text-align: center;
+   
     }
 }
 @for $j from 1 to 8 {

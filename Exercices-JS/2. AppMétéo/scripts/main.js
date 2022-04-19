@@ -130,15 +130,14 @@ fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${lon
     let heureActuelle = new Date().getHours();
     for (let l = 0; l < 7; l++) {
         let heureAug = heureActuelle + l * 3;
-        console.log(heureAug[0]);
         if (heureAug === 24) {
             heureAug = "00";
         } else if (heureAug > 24){
            heureAug -= 24;
         }
         caseHour[l].innerHTML = `<p> ${heureAug} h </p>`;
+        caseHour[l].innerHTML += `<div> ${Math.round(data.hourly[l*3].temp)}°C </div>`;
     }
-
 
 })
 

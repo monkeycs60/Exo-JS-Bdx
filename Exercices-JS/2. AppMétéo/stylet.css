@@ -56,19 +56,22 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
-  height: 100%;
-  width: 100%;
+  max-height: 40vh;
+}
+
+img {
+  max-width: 20vw;
 }
 
 .weatherIcon {
   background: red;
-  height: 100%;
+  max-height: 50vh;
   width: 50%;
 }
 
 .weatherCurrentData {
   background: violet;
-  height: 100%;
+  max-height: 50vh;
   width: 50%;
 }
 
@@ -77,6 +80,7 @@ body {
   font-size: 2em;
   color: white;
   margin-top: 3%;
+  max-height: 30vh;
 }
 
 .h {
@@ -89,30 +93,37 @@ body {
 
 .h1 {
   background: #0f2525;
+  text-align: center;
 }
 
 .h2 {
   background: #1e2525;
+  text-align: center;
 }
 
 .h3 {
   background: #2d2525;
+  text-align: center;
 }
 
 .h4 {
   background: #3c2525;
+  text-align: center;
 }
 
 .h5 {
   background: #4b2525;
+  text-align: center;
 }
 
 .h6 {
   background: #5a2525;
+  text-align: center;
 }
 
 .h7 {
   background: #692525;
+  text-align: center;
 }
 
 .d1 {
