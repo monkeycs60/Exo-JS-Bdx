@@ -1,0 +1,123 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+height: 100vh;
+width: 100vw;
+background: linear-gradient(50deg, rgb(59, 4, 4), rgb(39, 38, 38));
+overflow: hidden;
+font-size: calc(2vmin + 5px);
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+user-select: none;
+
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 1fr 3fr 2fr 1fr 1fr;
+    grid-template-columns: repeat(8, 1fr);
+width: 60%;
+height: 70%;
+margin: auto;
+margin-top: 8%;
+border: 1px solid white;
+background: linear-gradient(45deg, blue 20%, rgb(241, 108, 241) 60%, rgb(241, 177, 238) 100%);
+@media screen and (max-width: 900px) {
+    margin-top: 10vmin;
+    width: 80%;
+    height: 80%;
+}
+}
+.title {
+    
+    width: 100%;
+    height: 100%;
+    font-size: 2em;
+    grid-column: 1 / span 8;
+    text-align: center;
+    display: grid;
+    align-items: center;
+    color: white;
+    font-weight: 600;
+    border: 1px solid white;
+    box-shadow: 0px 0px 10px 2px white;
+}   
+.weatherPannel {
+    
+    grid-column: 1 / span 8;
+    display: flex;
+    flex-flow: row nowrap;
+    max-height: 40vh;
+    justify-content: center;
+    align-items: center;
+   
+
+}
+img {
+    max-width: 20vw;
+    @media screen and (max-width: 900px) {
+        max-width: 35vw;
+    }
+}
+.weatherIcon {
+    
+    max-height: 50vh;
+    width: 50%;
+
+}
+.weatherCurrentData {
+    
+    max-height: 50vh;
+    width: 50%;
+}
+.old {
+    font-family: fantasy;
+    font-size: 2em;
+    color: white;
+    margin-top: 3%;
+    max-height: 30vh;
+}
+
+.weatherDetails {
+    grid-column: 1 / span 8;
+    border: 1px solid white;
+}
+
+
+.h {
+    grid-row: 4;
+    border: 0.5px solid white;
+    font-size: 1em;
+    @media screen and (max-width: 1500px) {
+        font-size: 0.7em;
+    }
+}
+
+.d {
+    grid-row: 5;
+    @extend .h
+}
+
+@for $i from 1 to 9 {
+    .h#{$i} {
+ 
+   display: flex;
+   flex-flow: column;
+   justify-content: center;
+   align-items: center;
+   
+    }
+}
+@for $j from 1 to 9 {
+    .d#{$j} {
+  
+   border: 1px solid white;
+   display: flex;
+   flex-flow: column;
+   justify-content: center;
+   align-items: center;
+    }
+}
