@@ -9,13 +9,13 @@ body {
   height: 100vh;
   width: 100vw;
   background: linear-gradient(50deg, #3b0404, #272626);
-  overflow: hidden;
   font-size: calc(2vmin + 5px);
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  overflow-x: hidden;
 }
 
 .container {
@@ -23,12 +23,12 @@ body {
   display: grid;
   -ms-grid-rows: 1fr 3fr 2fr 1fr 1fr;
       grid-template-rows: 1fr 3fr 2fr 1fr 1fr;
-  -ms-grid-columns: (1fr)[8];
-      grid-template-columns: repeat(8, 1fr);
-  width: 60%;
-  height: 70%;
+  -ms-grid-columns: (1fr)[10];
+      grid-template-columns: repeat(10, 1fr);
+  width: 90%;
+  height: 80%;
   margin: auto;
-  margin-top: 8%;
+  margin-top: 2%;
   border: 1px solid white;
   background: linear-gradient(45deg, blue 20%, #f16cf1 60%, #f1b1ee 100%);
 }
@@ -46,8 +46,8 @@ body {
   height: 100%;
   font-size: 2em;
   -ms-grid-column: 1;
-  -ms-grid-column-span: 8;
-  grid-column: 1 / span 8;
+  -ms-grid-column-span: 10;
+  grid-column: 1 / span 10;
   text-align: center;
   display: -ms-grid;
   display: grid;
@@ -73,9 +73,9 @@ body {
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
   max-height: 40vh;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -93,7 +93,7 @@ img {
 
 .weatherIcon {
   max-height: 50vh;
-  width: 50%;
+  width: 40%;
 }
 
 .weatherCurrentData {
@@ -109,11 +109,97 @@ img {
   max-height: 30vh;
 }
 
-.weatherDetails {
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 8;
-  grid-column: 1 / span 8;
-  border: 1px solid white;
+.vignette {
+  -ms-grid-column: 9;
+  -ms-grid-column-span: 2;
+  grid-column: 9 / span 2;
+  background-color: yellow;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  grid-row: 2 / span 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+button {
+  z-index: 3;
+}
+
+.btn {
+  -ms-grid-row: 4;
+  grid-row: 4;
+  -ms-grid-column: 9;
+  grid-column: 9;
+  height: 50%;
+  width: 80%;
+}
+
+.btn2 {
+  -ms-grid-row: 4;
+  grid-row: 4;
+  -ms-grid-column: 10;
+  grid-column: 10;
+  height: 50%;
+  width: 80%;
+}
+
+.modale {
+  visibility: hidden;
+  position: absolute;
+  left: -45vw;
+  top: 0;
+  width: 300px;
+  height: 300px;
+}
+
+.wind {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  background: red;
+  -ms-grid-row: 3;
+  grid-row: 3;
+}
+
+.clouds {
+  -ms-grid-column: 3;
+  grid-column: 3;
+  -ms-grid-row: 3;
+  grid-row: 3;
+}
+
+.humidity {
+  -ms-grid-column: 4;
+  grid-column: 4;
+  -ms-grid-row: 3;
+  grid-row: 3;
+}
+
+.uvi {
+  -ms-grid-column: 5;
+  grid-column: 5;
+  -ms-grid-row: 3;
+  grid-row: 3;
+}
+
+.tempFeeling {
+  -ms-grid-column: 6;
+  grid-column: 6;
+  -ms-grid-row: 3;
+  grid-row: 3;
 }
 
 .h, .d {

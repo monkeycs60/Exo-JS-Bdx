@@ -8,21 +8,21 @@ body {
 height: 100vh;
 width: 100vw;
 background: linear-gradient(50deg, rgb(59, 4, 4), rgb(39, 38, 38));
-overflow: hidden;
 font-size: calc(2vmin + 5px);
 font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 user-select: none;
+overflow-x: hidden;
 
 }
 
 .container {
     display: grid;
     grid-template-rows: 1fr 3fr 2fr 1fr 1fr;
-    grid-template-columns: repeat(8, 1fr);
-width: 60%;
-height: 70%;
+    grid-template-columns: repeat(10, 1fr);
+width: 90%;
+height: 80%;
 margin: auto;
-margin-top: 8%;
+margin-top: 2%;
 border: 1px solid white;
 background: linear-gradient(45deg, blue 20%, rgb(241, 108, 241) 60%, rgb(241, 177, 238) 100%);
 @media screen and (max-width: 900px) {
@@ -36,7 +36,7 @@ background: linear-gradient(45deg, blue 20%, rgb(241, 108, 241) 60%, rgb(241, 17
     width: 100%;
     height: 100%;
     font-size: 2em;
-    grid-column: 1 / span 8;
+    grid-column: 1 / span 10;
     text-align: center;
     display: grid;
     align-items: center;
@@ -51,8 +51,9 @@ background: linear-gradient(45deg, blue 20%, rgb(241, 108, 241) 60%, rgb(241, 17
     display: flex;
     flex-flow: row nowrap;
     max-height: 40vh;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
+    
    
 
 }
@@ -65,7 +66,7 @@ img {
 .weatherIcon {
     
     max-height: 50vh;
-    width: 50%;
+    width: 40%;
 
 }
 .weatherCurrentData {
@@ -81,9 +82,75 @@ img {
     max-height: 30vh;
 }
 
-.weatherDetails {
-    grid-column: 1 / span 8;
-    border: 1px solid white;
+.vignette {
+    grid-column: 9 / span 2;
+    background-color: yellow;
+    grid-row: 2 / span 2 ;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+    
+}
+.vignette1 {
+    
+   
+   
+}
+button {
+    
+    z-index: 3;
+   
+}
+.btn {
+    grid-row: 4;
+    grid-column: 9;
+    height: 50%;
+    width: 80%;
+   
+
+}
+.btn2 {
+    grid-row: 4;
+    grid-column: 10;
+    height: 50%;
+    width: 80%;
+   
+}
+.modale {
+    visibility: hidden;
+    position: absolute;
+    left: -45vw;
+    top: 0;
+    width: 300px;
+    height: 300px;
+  
+}
+
+.wind {
+    grid-column: 2;
+    background: red;
+    grid-row: 3;
+}
+.clouds {
+    grid-column: 3;
+    grid-row: 3;
+}
+.humidity {
+    grid-column: 4;
+    grid-row: 3;
+}
+.uvi {
+    grid-column: 5;
+    grid-row: 3;
+}
+.tempFeeling {
+    grid-column: 6;
+    grid-row: 3;
 }
 
 

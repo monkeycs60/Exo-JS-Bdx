@@ -1,12 +1,49 @@
 // On géocalise l'utilisateur
 navigator.geolocation.getCurrentPosition(success);
 
+const bouton = document.querySelector("#but");
+const modale = document.querySelector(".modale");
+
+let alternance = false;
+document.querySelector("#but2").addEventListener("click", () => {
+    alternance = !alternance;
+    if (alternance) {
+      
+        document.querySelector(".modale").style.visibility = "visible";
+
+       
+    } else {
+        document.querySelector(".modale").style.visibility = "hidden";
+
+    }
+});
+
+let scriptVignette = document.querySelector(".vignette1");
+
+let alternance2 = false;
+document.querySelector("#but").addEventListener("click", () => {
+    alternance2 = !alternance2;
+    if (alternance2) {
+        scriptVignette.style.transform = "scale(2) translateY(-5%)";
+        
+    
+    } else {
+        scriptVignette.style.transform="scale(1)";
+
+    }
+});
+
 let caseHour = document.getElementsByClassName("h");
 let caseDay = document.getElementsByClassName("d");
 
 let jour = new Date().getDay();
 const semaine = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
 
+let wind = document.getElementsByClassName("wind");
+let clouds = document.getElementsByClassName("clouds");
+let humidity = document.getElementsByClassName("humidity");
+let uvi = document.getElementsByClassName("uvi");
+let tempFeeling = document.getElementsByClassName("tempFeeling");
 
 function success(pos) {
     
@@ -122,6 +159,13 @@ fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=44.797829&lon=-1.2345
 })
 .then((data) => {
     console.log(data);
+    console.log(data.current.wind_speed);
+
+    wind[0].innerHTML = `<div class='detailed'> ${Math.round(data.current.wind_speed * 3.6)} </div>`;
+    clouds[0].innerHTML = `<div class='detailed'> ${data.current.clouds}% </div>`;
+    humidity[0].innerHTML = `<div class='detailed'> ${data.current.humidity} </div>`;
+    uvi[0].innerHTML = `<div class='detailed'> ${data.current.uvi} </div>`;
+    tempFeeling[0].innerHTML = `<div class='detailed'> ${Math.round(data.current.feels_like)} °C </div>`;
    
     let heureActuelle = new Date().getHours();
     for (let l = 0; l < 8; l++) {
@@ -146,7 +190,18 @@ fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=44.797829&lon=-1.2345
     }
 
 })
+// const options = {
+// 	method: 'GET',
+// 	headers: {
+// 		'X-RapidAPI-Host': 'tides.p.rapidapi.com',
+// 		'X-RapidAPI-Key': '6c47b8f74dmsh806d63717fb70d0p18c1c0jsn54d2c03ce099'
+// 	}
+// };
 
+// fetch('https://tides.p.rapidapi.com/tides?longitude=-2.097&latitude=44.414&interval=60&duration=1440', options)
+// 	.then(response => response.json())
+// 	.then(response => console.log(response))
+// 	.catch(err => console.error(err));
 }
 
 
