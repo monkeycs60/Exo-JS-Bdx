@@ -172,7 +172,7 @@ fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=44.797829&lon=-1.2345
     windDir[0].innerHTML = `<div class='dir'> ${data.current.wind_deg} </div>`;
     if (data.current.wind_deg < 22.5) {
         windDir[0].innerHTML += "<p>Nord</p>";
-        imageWind.src = "/Exercices-JS/2. BIS AppMétéo - plage/ressources/"
+        imageWind.src = "/Exercices-JS/2. BIS AppMétéo - plage/ressources/windirection/north.png";
     }
     else if (data.current.wind_deg < 45) {
         windDir[0].innerHTML += "<p>Nord / Nord Est</p>";
