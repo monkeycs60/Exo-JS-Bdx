@@ -150,7 +150,11 @@ xhr.onload = function(){
     todayData[0].innerHTML = `<div class='old'> ${descriptionWeather} </div>`;
     todayData[0].innerHTML += `<div class='old'> ${temperatureArrondie}°C </div>`;
     todayData[0].innerHTML += `<div class='old'> ${ville} </div>`;
+
+   
 }
+
+
 xhr.send();
 
 fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=44.797829&lon=-1.234520&exclude={part}&appid=ad38d891525e48eb7f62af8273be531f&units=metric&lang=fr`)
@@ -160,12 +164,133 @@ fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=44.797829&lon=-1.2345
 .then((data) => {
     console.log(data);
     console.log(data.current.wind_speed);
+    console.log(data.current.wind_speed * 3.6);
 
-    wind[0].innerHTML = `<div class='detailed'> ${Math.round(data.current.wind_speed * 3.6)} </div>`;
-    clouds[0].innerHTML = `<div class='detailed'> ${data.current.clouds}% </div>`;
-    humidity[0].innerHTML = `<div class='detailed'> ${data.current.humidity} </div>`;
-    uvi[0].innerHTML = `<div class='detailed'> ${data.current.uvi} </div>`;
-    tempFeeling[0].innerHTML = `<div class='detailed'> ${Math.round(data.current.feels_like)} °C </div>`;
+    let imageWind = document.createElement("img");
+
+    let windDir = document.getElementsByClassName("windDirection");
+    windDir[0].innerHTML = `<div class='dir'> ${data.current.wind_deg} </div>`;
+    if (data.current.wind_deg < 22.5) {
+        windDir[0].innerHTML += "<p>Nord</p>";
+        imageWind.src = "/Exercices-JS/2. BIS AppMétéo - plage/ressources/"
+    }
+    else if (data.current.wind_deg < 45) {
+        windDir[0].innerHTML += "<p>Nord / Nord Est</p>";
+    }
+    else if (data.current.wind_deg < 67.5) {
+        windDir[0].innerHTML += "<p>Nord Est</p>";
+    }
+    else if (data.current.wind_deg < 90) {
+        windDir[0].innerHTML += "<p>Est / Nord Est</p>";
+    }
+    else if (data.current.wind_deg < 112.5) {
+        windDir[0].innerHTML += "<p>Est</p>";
+    }
+    else if (data.current.wind_deg < 135) {
+        windDir[0].innerHTML += "<p>Est / Sud Est</p>";
+    }
+    else if (data.current.wind_deg < 157.5) {
+        windDir[0].innerHTML += "<p>Sud Est</p>";
+    }
+    else if (data.current.wind_deg < 180) {
+        windDir[0].innerHTML += "<p>Sud Est / Sud</p>";
+    }
+    else if (data.current.wind_deg < 202.5) {
+        windDir[0].innerHTML += "<p>Sud</p>";
+    }
+    else if (data.current.wind_deg < 225) {
+        windDir[0].innerHTML += "<p>Sud / Sud Ouest</p>";
+    }
+    else if (data.current.wind_deg < 247.5) {
+        windDir[0].innerHTML += "<p>Sud Ouest</p>";
+    }
+    else if (data.current.wind_deg < 270) {
+        windDir[0].innerHTML += "<p>Ouest / Sud Ouest</p>";
+    }
+    else if (data.current.wind_deg < 292.5) {
+        windDir[0].innerHTML += "<p>Ouest</p>";
+    }
+    else if (data.current.wind_deg < 315) {
+        windDir[0].innerHTML += "<p>Ouest / Nord Ouest</p>";
+    }
+    else if (data.current.wind_deg < 337.5) {
+        windDir[0].innerHTML += "<p>Nord Ouest</p>";
+    }
+    else if (data.current.wind_deg > 337.5) {
+        windDir[0].innerHTML += "<p>Nord / Nord Ouest</p>";
+    }
+   
+
+    wind[0].innerHTML = `<p class='intro'> Force du vent (km/h) </p>`;
+    wind[0].innerHTML += `<div class='detailed'> ${Math.round(data.current.wind_speed * 3.6)} </div>`;
+    
+    if ((data.current.wind_speed * 3.6) < 1) {
+       wind[0].style.background = "rgb(248, 249, 250)";
+    }
+   else if ((data.current.wind_speed * 3.6) < 5) {
+       wind[0].style.background = "rgb(204, 255, 255)";
+    }
+    else  if ((data.current.wind_speed * 3.6) < 11) {
+       wind[0].style.background = "rgb(153, 255, 255)";
+    }
+    else  if ((data.current.wind_speed * 3.6) < 19) {
+       wind[0].style.background = "rgb(102, 255, 255)";
+    }
+    else  if ((data.current.wind_speed * 3.6) < 28) {
+       wind[0].style.background = "rgb(0, 255, 255)";
+    }
+    else  if ((data.current.wind_speed * 3.6) < 38) {
+       wind[0].style.background = "rgb(0, 204, 255)";
+    }
+    else  if ((data.current.wind_speed * 3.6) < 49) {
+       wind[0].style.background = "rgb(0, 153, 255)";
+    }
+    else  if ((data.current.wind_speed * 3.6) < 61) {
+       wind[0].style.background = "rgb(0, 102, 255)";
+    }
+    else  if ((data.current.wind_speed * 3.6) < 74) {
+       wind[0].style.background = "rgb(0, 0, 255)";
+    }
+    else  if ((data.current.wind_speed * 3.6) < 88) {
+       wind[0].style.background = "rgb(0, 158, 247)";
+    }
+    else  if ((data.current.wind_speed * 3.6) < 102) {
+       wind[0].style.background = "rgb(0, 0, 153)";
+    }
+    else  if ((data.current.wind_speed * 3.6) < 117) {
+       wind[0].style.background = "rgb(0, 0, 102)";
+    }
+    else  if ((data.current.wind_speed * 3.6) > 118) {
+       wind[0].style.background = "rgb(0, 0, 0)";
+    }
+
+    clouds[0].innerHTML = `<p class='intro'> Taux d'ennuagement (en %) </p>`;
+    clouds[0].innerHTML += `<div class='detailed'> ${data.current.clouds}% </div>`;
+
+    humidity[0].innerHTML = `<p class='intro'> Taux d'humidité (en %)  </p>`;
+    humidity[0].innerHTML += `<div class='detailed'> ${data.current.humidity} </div>`;
+
+    uvi[0].innerHTML = `<p class='intro'> Indice UV <br>(de 1 à 11+) </p>`;
+    uvi[0].innerHTML += `<div class='detailed'> ${data.current.uvi} </div>`;
+    if (data.current.uvi < 2) {
+    uvi[0].style.background = "green";
+    }
+    else if (data.current.uvi < 5) {
+        uvi[0].style.background = "yellow";
+    }
+    else if (data.current.uvi < 7) {
+        uvi[0].style.background = "orange";
+    }
+    else if (data.current.uvi < 10) {
+        uvi[0].style.background = "red";
+    }
+    else if (data.current.uvi < 20) {
+        uvi[0].style.background = "violet";
+    }
+    
+
+    tempFeeling[0].innerHTML = `<p class='intro'> Température ressentie <br> (en °C) </p>`;
+    tempFeeling[0].innerHTML += `<div class='detailed'> ${Math.round(data.current.feels_like)} °C </div>`;
    
     let heureActuelle = new Date().getHours();
     for (let l = 0; l < 8; l++) {

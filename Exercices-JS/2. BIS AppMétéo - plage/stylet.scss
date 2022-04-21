@@ -1,3 +1,17 @@
+@mixin caseDetails {
+    height: 70%;
+    display: flex;
+    flex-flow: column wrap;
+    gap: 10%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8em;
+    border: solid 1px white;
+    
+}
+
+
 *, ::before, ::after {
     box-sizing: border-box;
     margin: 0;
@@ -53,6 +67,7 @@ background: linear-gradient(45deg, blue 20%, rgb(241, 108, 241) 60%, rgb(241, 17
     max-height: 40vh;
     justify-content: flex-end;
     align-items: center;
+    background: green;
     
    
 
@@ -66,13 +81,25 @@ img {
 .weatherIcon {
     
     max-height: 50vh;
-    width: 40%;
+    width: 35%;
 
 }
 .weatherCurrentData {
     
     max-height: 50vh;
-    width: 50%;
+    width: 25%;
+}
+.windDirection {
+    background: red;
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    font-family: fantasy;
+    font-size: 2em;
+    color: white;
 }
 .old {
     font-family: fantasy;
@@ -104,21 +131,22 @@ img {
 button {
     
     z-index: 3;
+    height: 40%;
+    width: 80%;
+   margin-left: auto;
+    margin-right: auto;
    
 }
 .btn {
     grid-row: 4;
     grid-column: 9;
-    height: 50%;
-    width: 80%;
-   
+  
 
 }
 .btn2 {
     grid-row: 4;
     grid-column: 10;
-    height: 50%;
-    width: 80%;
+    
    
 }
 .modale {
@@ -133,24 +161,34 @@ button {
 
 .wind {
     grid-column: 2;
-    background: red;
     grid-row: 3;
+  @include caseDetails();
 }
 .clouds {
     grid-column: 3;
     grid-row: 3;
+    @include caseDetails();
+
+   
+    
 }
 .humidity {
     grid-column: 4;
     grid-row: 3;
+    @include caseDetails();
+   
 }
 .uvi {
     grid-column: 5;
     grid-row: 3;
+    @include caseDetails();
+   
 }
 .tempFeeling {
     grid-column: 6;
     grid-row: 3;
+    @include caseDetails();
+    
 }
 
 

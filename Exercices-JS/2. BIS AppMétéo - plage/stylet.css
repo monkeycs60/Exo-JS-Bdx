@@ -79,6 +79,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background: green;
 }
 
 img {
@@ -93,12 +94,34 @@ img {
 
 .weatherIcon {
   max-height: 50vh;
-  width: 40%;
+  width: 35%;
 }
 
 .weatherCurrentData {
   max-height: 50vh;
-  width: 50%;
+  width: 25%;
+}
+
+.windDirection {
+  background: red;
+  width: 30%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: fantasy;
+  font-size: 2em;
+  color: white;
 }
 
 .old {
@@ -137,6 +160,10 @@ img {
 
 button {
   z-index: 3;
+  height: 40%;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .btn {
@@ -144,8 +171,6 @@ button {
   grid-row: 4;
   -ms-grid-column: 9;
   grid-column: 9;
-  height: 50%;
-  width: 80%;
 }
 
 .btn2 {
@@ -153,8 +178,6 @@ button {
   grid-row: 4;
   -ms-grid-column: 10;
   grid-column: 10;
-  height: 50%;
-  width: 80%;
 }
 
 .modale {
@@ -169,9 +192,26 @@ button {
 .wind {
   -ms-grid-column: 2;
   grid-column: 2;
-  background: red;
   -ms-grid-row: 3;
   grid-row: 3;
+  height: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  gap: 10%;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 0.8em;
+  border: solid 1px white;
 }
 
 .clouds {
@@ -179,6 +219,24 @@ button {
   grid-column: 3;
   -ms-grid-row: 3;
   grid-row: 3;
+  height: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  gap: 10%;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 0.8em;
+  border: solid 1px white;
 }
 
 .humidity {
@@ -186,6 +244,24 @@ button {
   grid-column: 4;
   -ms-grid-row: 3;
   grid-row: 3;
+  height: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  gap: 10%;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 0.8em;
+  border: solid 1px white;
 }
 
 .uvi {
@@ -193,6 +269,24 @@ button {
   grid-column: 5;
   -ms-grid-row: 3;
   grid-row: 3;
+  height: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  gap: 10%;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 0.8em;
+  border: solid 1px white;
 }
 
 .tempFeeling {
@@ -200,6 +294,24 @@ button {
   grid-column: 6;
   -ms-grid-row: 3;
   grid-row: 3;
+  height: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  gap: 10%;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 0.8em;
+  border: solid 1px white;
 }
 
 .h, .d {
