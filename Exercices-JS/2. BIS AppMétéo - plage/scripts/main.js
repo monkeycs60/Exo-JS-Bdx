@@ -169,60 +169,91 @@ fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=44.797829&lon=-1.2345
     let imageWind = document.createElement("img");
 
     let windDir = document.getElementsByClassName("windDirection");
-    windDir[0].innerHTML = `<div class='dir'> ${data.current.wind_deg} </div>`;
+    // windDir[0].innerHTML = `<div class='dir'> ${data.current.wind_deg} </div>`;
     if (data.current.wind_deg < 22.5) {
         windDir[0].innerHTML += "<p>Nord</p>";
         imageWind.src = "/Exercices-JS/2. BIS AppMétéo - plage/ressources/windirection/north.png";
+        imageWind.width = "200";    
     }
     else if (data.current.wind_deg < 45) {
         windDir[0].innerHTML += "<p>Nord / Nord Est</p>";
+        imageWind.src = "/Exercices-JS/2. BIS AppMétéo - plage/ressources/windirection/northnortheast.png";
+        imageWind.width = "200"; 
     }
     else if (data.current.wind_deg < 67.5) {
         windDir[0].innerHTML += "<p>Nord Est</p>";
+        imageWind.src = "/Exercices-JS/2. BIS AppMétéo - plage/ressources/windirection/northeast.png";
+        imageWind.width = "200"; 
     }
     else if (data.current.wind_deg < 90) {
         windDir[0].innerHTML += "<p>Est / Nord Est</p>";
+        imageWind.src = "/Exercices-JS/2. BIS AppMétéo - plage/ressources/windirection/eastnortheast.png";
+        imageWind.width = "200"; 
     }
     else if (data.current.wind_deg < 112.5) {
         windDir[0].innerHTML += "<p>Est</p>";
+        imageWind.src = "/Exercices-JS/2. BIS AppMétéo - plage/ressources/windirection/east.png";
+        imageWind.width = "200"; 
     }
     else if (data.current.wind_deg < 135) {
         windDir[0].innerHTML += "<p>Est / Sud Est</p>";
+        imageWind.src = "/Exercices-JS/2. BIS AppMétéo - plage/ressources/windirection/eastsoutheast.png";
+        imageWind.width = "200"; 
     }
     else if (data.current.wind_deg < 157.5) {
         windDir[0].innerHTML += "<p>Sud Est</p>";
+        imageWind.src = "/Exercices-JS/2. BIS AppMétéo - plage/ressources/windirection/southeast.png";
+        imageWind.width = "200"; 
     }
     else if (data.current.wind_deg < 180) {
         windDir[0].innerHTML += "<p>Sud Est / Sud</p>";
+        imageWind.src = "/Exercices-JS/2. BIS AppMétéo - plage/ressources/windirection/souteastsouth.png";
+        imageWind.width = "200"; 
     }
     else if (data.current.wind_deg < 202.5) {
         windDir[0].innerHTML += "<p>Sud</p>";
+        imageWind.src = "/Exercices-JS/2. BIS AppMétéo - plage/ressources/windirection/south.png";
+        imageWind.width = "200"; 
     }
     else if (data.current.wind_deg < 225) {
         windDir[0].innerHTML += "<p>Sud / Sud Ouest</p>";
+        imageWind.src = "/Exercices-JS/2. BIS AppMétéo - plage/ressources/windirection/southwestsouth.png";
+        imageWind.width = "200"; 
     }
     else if (data.current.wind_deg < 247.5) {
         windDir[0].innerHTML += "<p>Sud Ouest</p>";
+        imageWind.src = "/Exercices-JS/2. BIS AppMétéo - plage/ressources/windirection/Southwest.png";
+        imageWind.width = "200"; 
     }
     else if (data.current.wind_deg < 270) {
         windDir[0].innerHTML += "<p>Ouest / Sud Ouest</p>";
+        imageWind.src = "/Exercices-JS/2. BIS AppMétéo - plage/ressources/windirection/westsouthwest.png";
+        imageWind.width = "200"; 
     }
     else if (data.current.wind_deg < 292.5) {
         windDir[0].innerHTML += "<p>Ouest</p>";
+        imageWind.src = "/Exercices-JS/2. BIS AppMétéo - plage/ressources/windirection/west.png";
+        imageWind.width = "200"; 
     }
     else if (data.current.wind_deg < 315) {
         windDir[0].innerHTML += "<p>Ouest / Nord Ouest</p>";
+        imageWind.src = "/Exercices-JS/2. BIS AppMétéo - plage/ressources/windirection/westnorthwest.png";
+        imageWind.width = "200"; 
     }
     else if (data.current.wind_deg < 337.5) {
         windDir[0].innerHTML += "<p>Nord Ouest</p>";
+        imageWind.src = "/Exercices-JS/2. BIS AppMétéo - plage/ressources/windirection/northwest.png";
+        imageWind.width = "200"; 
     }
     else if (data.current.wind_deg > 337.5) {
         windDir[0].innerHTML += "<p>Nord / Nord Ouest</p>";
+        imageWind.src = "/Exercices-JS/2. BIS AppMétéo - plage/ressources/windirection/northnorthwest.png";
+        imageWind.width = "200"; 
     }
-   
+   windDir[0].appendChild(imageWind);
 
-    wind[0].innerHTML = `<p class='intro'> Force du vent (km/h) </p>`;
-    wind[0].innerHTML += `<div class='detailed'> ${Math.round(data.current.wind_speed * 3.6)} </div>`;
+    wind[0].innerHTML = `<p class='intro'> Force du vent</p>`;
+    wind[0].innerHTML += `<div class='detailed'> ${Math.round(data.current.wind_speed * 3.6)} km/h </div>`;
     
     if ((data.current.wind_speed * 3.6) < 1) {
        wind[0].style.background = "rgb(248, 249, 250)";
@@ -264,13 +295,13 @@ fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=44.797829&lon=-1.2345
        wind[0].style.background = "rgb(0, 0, 0)";
     }
 
-    clouds[0].innerHTML = `<p class='intro'> Taux d'ennuagement (en %) </p>`;
-    clouds[0].innerHTML += `<div class='detailed'> ${data.current.clouds}% </div>`;
+    clouds[0].innerHTML = `<p class='intro'> Taux d'ennuagement</p>`;
+    clouds[0].innerHTML += `<div class='detailed'> ${data.current.clouds} % </div>`;
 
-    humidity[0].innerHTML = `<p class='intro'> Taux d'humidité (en %)  </p>`;
-    humidity[0].innerHTML += `<div class='detailed'> ${data.current.humidity} </div>`;
+    humidity[0].innerHTML = `<p class='intro'> Taux d'humidité</p>`;
+    humidity[0].innerHTML += `<div class='detailed'> ${data.current.humidity} % </div>`;
 
-    uvi[0].innerHTML = `<p class='intro'> Indice UV <br>(de 1 à 11+) </p>`;
+    uvi[0].innerHTML = `<p class='intro'> Indice UV </p>`;
     uvi[0].innerHTML += `<div class='detailed'> ${data.current.uvi} </div>`;
     if (data.current.uvi < 2) {
     uvi[0].style.background = "green";
@@ -289,10 +320,12 @@ fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=44.797829&lon=-1.2345
     }
     
 
-    tempFeeling[0].innerHTML = `<p class='intro'> Température ressentie <br> (en °C) </p>`;
+    tempFeeling[0].innerHTML = `<p class='intro'> Température ressentie </p>`;
     tempFeeling[0].innerHTML += `<div class='detailed'> ${Math.round(data.current.feels_like)} °C </div>`;
    
     let heureActuelle = new Date().getHours();
+
+    let aSup = document.getElementsByClassName("addendum");
     for (let l = 0; l < 8; l++) {
         let heureAug = heureActuelle + l * 2;
         if (heureAug === 24) {
@@ -302,6 +335,12 @@ fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=44.797829&lon=-1.2345
         }
         caseHour[l].innerHTML = `<p> ${heureAug} h </p>`;
         caseHour[l].innerHTML += `<div> ${Math.round(data.hourly[l*3].temp)}°C </div>`;
+        // caseHour[l].addEventListener("mouseenter", () => {
+        //     caseHour[l].innerHTML += "<p class='addendum'> coucou </p>";
+        // } )
+        // caseHour[l].addEventListener("mouseleave", () => {
+        //     aSup.remove();
+        // } ) ;
         
         let indiceSemaine = jour + l - 1;
         if (indiceSemaine > 6) {
@@ -315,6 +354,9 @@ fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=44.797829&lon=-1.2345
     }
 
 })
+
+let charg = document.querySelector(".chargement");
+charg.classList.add("disparition");
 // const options = {
 // 	method: 'GET',
 // 	headers: {
