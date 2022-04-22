@@ -355,22 +355,21 @@ fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=44.797829&lon=-1.2345
 
 })
 
+
 let charg = document.querySelector(".chargement");
 charg.classList.add("disparition");
-// const options = {
-// 	method: 'GET',
-// 	headers: {
-// 		'X-RapidAPI-Host': 'tides.p.rapidapi.com',
-// 		'X-RapidAPI-Key': '6c47b8f74dmsh806d63717fb70d0p18c1c0jsn54d2c03ce099'
-// 	}
-// };
 
-// fetch('https://tides.p.rapidapi.com/tides?longitude=-2.097&latitude=44.414&interval=60&duration=1440', options)
-// 	.then(response => response.json())
-// 	.then(response => console.log(response))
-// 	.catch(err => console.error(err));
+fetch(`https://api.windy.com/api/webcams/v2?key=zcAvXCSW4fsVUkC8UC9j9QwgxMYuYirn`)
+.then((reponse) => {
+    return reponse.json();
+})
+.then((data) => {
+    console.log(data);
+
+})
 }
 
 
+// https://api.windy.com/api/webcams/v2?key=zcAvXCSW4fsVUkC8UC9j9QwgxMYuYirn
 
 
