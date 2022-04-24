@@ -3,7 +3,9 @@
   src: url(/Roboto-Regular.ttf);
 }
 
-*, ::before, ::after {
+*,
+::before,
+::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0;
@@ -11,128 +13,77 @@
 }
 
 body {
-  height: 100vh;
-  width: 100vw;
-  background: sandybrown;
+  height: 100%;
+  width: 100%;
+  background: -webkit-gradient(linear, left top, right top, from(sandybrown), to(#6b5949));
+  background: linear-gradient(90deg, sandybrown, #6b5949);
   font-size: calc(2vmin + 5px);
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  overflow-x: hidden;
-}
-
-@media screen and (max-width: 1500px) {
-  body {
-    font-size: calc(1.3vmin + 5px);
-  }
 }
 
 .container {
-  position: relative;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 1fr 3fr 4fr 1fr 1fr;
-      grid-template-rows: 1fr 3fr 4fr 1fr 1fr;
-  -ms-grid-columns: (1fr)[10];
-      grid-template-columns: repeat(10, 1fr);
   width: 90%;
-  height: 90%;
   margin: auto;
-  margin-top: 2%;
-  border: 1px solid white;
-  background: linear-gradient(45deg, blue 20%, #f16cf1 60%, #f1b1ee 100%);
+  height: 100vh;
 }
 
-@media screen and (max-width: 2200px) {
-  .container {
-    width: 90%;
-    height: 95%;
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .container {
-    margin-top: 10vmin;
-    width: 80%;
-    height: 80%;
-  }
-}
-
-.title {
-  width: 100%;
-  height: 100%;
-  font-size: 2em;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 10;
-  grid-column: 1 / span 10;
-  text-align: center;
-  display: -ms-grid;
-  display: grid;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: white;
-  font-weight: 600;
-  border: 1px solid white;
-}
-
-.weatherPannel {
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 8;
-  grid-column: 1 / span 8;
+.top-pannel {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
-  max-height: 40vh;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  background: green;
+  width: 100%;
+  border: 5px solid yellow;
+  height: 25%;
+}
+
+.title {
+  width: 20%;
+  margin: auto;
+  text-align: center;
+  font-size: 2em;
+  border: 5px solid black;
+}
+
+.weatherPannel {
+  padding-left: 10%;
+  background: blue;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 70%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  gap: 10%;
 }
 
-img {
-  max-width: 20vw;
+.old {
+  font-family: fantasy;
+  font-size: 2em;
+  color: white;
+  margin-top: 3%;
+  max-height: 30vh;
 }
 
-@media screen and (max-width: 2200px) {
-  img {
-    max-width: 250px;
-  }
-}
-
-@media screen and (max-width: 1500px) {
-  img {
-    max-width: 200px;
-  }
-}
-
-@media screen and (max-width: 1100px) {
-  img {
-    max-width: 140px;
-  }
-}
-
-.weatherIcon {
-  max-height: 50vh;
-  width: 35%;
-}
-
-.weatherCurrentData {
-  max-height: 50vh;
-  width: 25%;
+.weather-details-pannel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 30%;
 }
 
 .windDirection {
+  background: blue;
   width: 30%;
-  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -146,102 +97,23 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: fantasy;
-  font-size: 2em;
-  color: white;
 }
 
-.old {
-  font-family: fantasy;
-  font-size: 2em;
-  color: white;
-  margin-top: 3%;
-  max-height: 30vh;
+.windDirection img {
+  width: 13vw;
 }
 
-.webcam {
-  margin-left: 5px;
-  -ms-grid-row: 3;
-  grid-row: 3;
-  -ms-grid-column: 6;
-  -ms-grid-column-span: 3;
-  grid-column: 6 / span 3;
-}
-
-@media screen and (max-width: 2300px) {
-  video {
-    max-width: 500px;
-    height: 400px;
-  }
-}
-
-@media screen and (max-width: 1700px) {
-  video {
-    max-width: 350px;
-    height: 300px;
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  video {
-    max-width: 280px;
-  }
-}
-
-.vignette {
-  -ms-grid-column: 9;
-  -ms-grid-column-span: 2;
-  grid-column: 9 / span 2;
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 2;
-  grid-row: 2 / span 2;
+.tableau-details {
+  width: 70%;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column wrap;
-          flex-flow: column wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100%;
-  width: 100%;
-  position: relative;
-}
-
-button {
-  z-index: 3;
-  height: 40%;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.btn {
-  -ms-grid-row: 4;
-  grid-row: 4;
-  -ms-grid-column: 9;
-  grid-column: 9;
-}
-
-.btn2 {
-  -ms-grid-row: 4;
-  grid-row: 4;
-  -ms-grid-column: 10;
-  grid-column: 10;
-}
-
-.modale {
-  visibility: hidden;
-  position: absolute;
-  left: -45vw;
-  top: 0;
-  width: 300px;
-  height: 300px;
 }
 
 .intro {
@@ -249,141 +121,223 @@ button {
 }
 
 .wind {
-  -ms-grid-column: 1;
-  grid-column: 1;
-  -ms-grid-row: 3;
-  grid-row: 3;
-  height: 70%;
+  height: 100%;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column wrap;
-          flex-flow: column wrap;
-  gap: 10%;
-  text-align: center;
+      -ms-flex-flow: column;
+          flex-flow: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 0.8em;
+  text-align: center;
+  gap: 10%;
+  border: 2px ridge brown;
+  border-radius: 10%;
 }
 
 .uvi {
-  -ms-grid-column: 2;
-  grid-column: 2;
-  -ms-grid-row: 3;
-  grid-row: 3;
-  height: 70%;
+  height: 100%;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column wrap;
-          flex-flow: column wrap;
-  gap: 10%;
-  text-align: center;
+      -ms-flex-flow: column;
+          flex-flow: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 0.8em;
+  text-align: center;
+  gap: 10%;
+  border: 2px ridge brown;
+  border-radius: 10%;
 }
 
 .clouds {
-  -ms-grid-column: 3;
-  grid-column: 3;
-  -ms-grid-row: 3;
-  grid-row: 3;
-  height: 70%;
+  height: 100%;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column wrap;
-          flex-flow: column wrap;
-  gap: 10%;
-  text-align: center;
+      -ms-flex-flow: column;
+          flex-flow: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 0.8em;
+  text-align: center;
+  gap: 10%;
+  border: 2px ridge brown;
+  border-radius: 10%;
 }
 
 .humidity {
-  -ms-grid-column: 4;
-  grid-column: 4;
-  -ms-grid-row: 3;
-  grid-row: 3;
-  height: 70%;
+  height: 100%;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column wrap;
-          flex-flow: column wrap;
-  gap: 10%;
-  text-align: center;
+      -ms-flex-flow: column;
+          flex-flow: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 0.8em;
+  text-align: center;
+  gap: 10%;
+  border: 2px ridge brown;
+  border-radius: 10%;
 }
 
 .tempFeeling {
-  -ms-grid-column: 5;
-  grid-column: 5;
-  -ms-grid-row: 3;
-  grid-row: 3;
-  height: 70%;
+  height: 100%;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column wrap;
-          flex-flow: column wrap;
-  gap: 10%;
-  text-align: center;
+      -ms-flex-flow: column;
+          flex-flow: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 0.8em;
+  text-align: center;
+  gap: 10%;
+  border: 2px ridge brown;
+  border-radius: 10%;
+}
+
+.media-externes {
+  width: 100%;
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  margin-bottom: 3%;
+}
+
+.vignette {
+  width: 40%;
+}
+
+.vignette1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  width: 100%;
+  background: yellow;
+}
+
+.boutons {
+  margin-top: 2%;
+  height: 10%;
+  width: 25%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  gap: 5%;
+}
+
+button {
+  width: 100%;
+  z-index: 3;
+  border: 3px solid transparent;
+  border-radius: 50%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#3a525e), to(white)) padding-box, -webkit-gradient(linear, left top, left bottom, from(#a52a8a), to(sandybrown)) border-box;
+  background: linear-gradient(#3a525e, white) padding-box, linear-gradient(#a52a8a, sandybrown) border-box;
+}
+
+.modale {
+  visibility: hidden;
+  position: absolute;
+  left: 25vw;
+  top: 40vh;
+  width: 300px;
+  height: 300px;
+}
+
+.webcam {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: green;
+  height: 100%;
+  width: 60%;
+}
+
+.grid-prevision-h {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  margin: auto;
+  height: 10%;
+}
+
+.grid-prevision-d {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  margin: auto;
+  height: 10%;
+  margin-bottom: 5%;
+  margin-top: 5%;
 }
 
 .h, .d {
-  -ms-grid-row: 4;
-  grid-row: 4;
   border: 0.5px solid white;
   font-size: 1em;
-}
-
-@media screen and (max-width: 1500px) {
-  .h, .d {
-    font-size: 0.7em;
-  }
-}
-
-.d {
-  -ms-grid-row: 5;
-  grid-row: 5;
+  width: 100%;
+  height: 100%;
 }
 
 .h1 {
@@ -679,7 +633,7 @@ button {
   visibility: hidden;
 }
 
-.h1, .d1 {
-  border: none;
+.footer {
+  margin-top: 5%;
 }
 /*# sourceMappingURL=stylet.css.map */

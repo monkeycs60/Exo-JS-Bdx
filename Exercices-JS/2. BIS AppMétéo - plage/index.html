@@ -1,79 +1,94 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AppMétéo</title>
     <link rel="stylesheet" href="stylet.css">
 </head>
+
 <body>
     <div class="chargement">
         <img src="/Exercices-JS/2. BIS AppMétéo - plage/ressources/chargement/circles.svg" alt="">
     </div>
-<div class="container">
-    
-    <div class="title">Application météo</div>
-    <div class="weatherPannel">
-        <div class="weatherIcon"></div>
-        <div class="weatherCurrentData"></div>
-        <div class="windDirection"></div>
-    </div>
-
-    <div class="webcam">
-       
-        <!-- <video autoplay muted width="700"  src="https://barrelsurfing.fr/video/solarmov_legrand_croho.mp4"></video> -->
-    </div>
- 
-
-    <div class="vignette">
-        <div class="vignette1">
-        <script src="https://services.data.shom.fr/hdm/vignette/petite/LACANAU?locale=fr"></script>
+    <div class="container">
+        <div class="top-pannel">
+            <div class="title">
+                <p class="title-text"> Application météo</p>
+            </div>
+            <div class="weatherPannel">
+                <div class="weatherIcon"></div>
+                <div class="weatherCurrentData"></div>
+            </div>
         </div>
-        <div class="modale">
-            <script src="https://services.data.shom.fr/hdm/vignette/grande/LACANAU?locale=fr"></script>
+
+        <div class="weather-details-pannel">
+            <div class="windDirection"></div>
+            <div class="tableau-details">
+                <div class="wind"></div>
+                <div class="uvi"></div>
+                <div class="clouds"></div>
+                <div class="humidity"></div>
+                <div class="tempFeeling"></div>
+            </div>
         </div>
-    </div>
-        <button class="btn" id="but">
-            Zoom
-        </button>
-        <button class="btn2" id="but2">
-            Détails
-        </button>
-       
-    
-   
+        <div class="media-externes">
+            <div class="vignette">
+                <div class="vignette1">
+                    <script src="https://services.data.shom.fr/hdm/vignette/petite/LACANAU?locale=fr"></script>
+                    <div class="boutons"> <button class="btn" id="but">
+                            Zoom
+                        </button>
+                        <button class="btn2" id="but2">
+                            Détails
+                        </button>
+                    </div>
+                </div>
+                <div class="modale">
+                    <script src="https://services.data.shom.fr/hdm/vignette/grande/LACANAU?locale=fr"></script>
+                </div>
+            </div>
 
-        <div class="wind"></div>
-        <div class="clouds"></div>
-        <div class="humidity"></div>
-        <div class="uvi"></div>
-        <div class="tempFeeling"></div>
 
-    
-        <div class="h h1"></div>
-        <div class="h h2"></div>
-        <div class="h h3"></div>
-        <div class="h h4"></div>
-        <div class="h h5"></div>
-        <div class="h h6"></div>
-        <div class="h h7"></div>
-        <div class="h h8"></div>
-    
-   
- 
-        <div class="d d1"></div>
-        <div class="d d2"></div>
-        <div class="d d3"></div>
-        <div class="d d4"></div>
-        <div class="d d5"></div>
-        <div class="d d6"></div>
-        <div class="d d7"></div>
-        <div class="d d8"></div>
-       
-    
-        
-        
+            <div class="webcam">
+
+                <!-- <video autoplay muted width="700"  src="https://barrelsurfing.fr/video/solarmov_legrand_croho.mp4"></video> -->
+            </div>
+        </div>
+
+
+
+
+        <div class="grid-prevision-h">
+
+
+
+            <div class="h h1"></div>
+            <div class="h h2"></div>
+            <div class="h h3"></div>
+            <div class="h h4"></div>
+            <div class="h h5"></div>
+            <div class="h h6"></div>
+            <div class="h h7"></div>
+            
+
+        </div>
+        <div class="grid-prevision-d">
+            <div class="d d1"></div>
+            <div class="d d2"></div>
+            <div class="d d3"></div>
+            <div class="d d4"></div>
+            <div class="d d5"></div>
+            <div class="d d6"></div>
+            <div class="d d7"></div>
+           
+
+        </div>
+
+<div class="footer"></div>
     </div>
     <script type="module" src="./scripts/main.js"></script>
 </body>
+
 </html>

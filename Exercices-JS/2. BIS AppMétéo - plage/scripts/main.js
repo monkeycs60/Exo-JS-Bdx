@@ -336,8 +336,8 @@ fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=44.797829&lon=-1.2345
         } else if (heureAug > 24){
            heureAug -= 24;
         }
-        caseHour[l].innerHTML = `<p> ${heureAug} h </p>`;
-        caseHour[l].innerHTML += `<div> ${Math.round(data.hourly[l*3].temp)}°C </div>`;
+        caseHour[l-1].innerHTML = `<p> ${heureAug} h </p>`;
+        caseHour[l-1].innerHTML += `<div> ${Math.round(data.hourly[l*3].temp)}°C </div>`;
         // caseHour[l].addEventListener("mouseenter", () => {
         //     caseHour[l].innerHTML += "<p class='addendum'> coucou </p>";
         // } )
@@ -353,8 +353,8 @@ fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=44.797829&lon=-1.2345
 
       
         
-        caseDay[l].innerHTML = `<p> ${jourPrecis} </p>`;
-        caseDay[l].innerHTML += `<div> ${Math.round(data.daily[l].temp.day)}°C </div>`;
+        caseDay[l-1].innerHTML = `<p> ${jourPrecis} </p>`;
+        caseDay[l-1].innerHTML += `<div> ${Math.round(data.daily[l].temp.day)}°C </div>`;
         console.log(jourPrecis);
     }
 
