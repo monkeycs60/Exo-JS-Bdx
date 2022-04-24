@@ -123,15 +123,15 @@ fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${lon
 .then((data) => {
    
     let heureActuelle = new Date().getHours();
-    for (let l = 0; l < 7; l++) {
+    for (let l = 1; l < 8; l++) {
         let heureAug = heureActuelle + l * 3;
         if (heureAug === 24) {
             heureAug = "00";
         } else if (heureAug > 24){
            heureAug -= 24;
         }
-        caseHour[l].innerHTML = `<p> ${heureAug} h </p>`;
-        caseHour[l].innerHTML += `<div> ${Math.round(data.hourly[l*3].temp)}°C </div>`;
+        caseHour[l-1].innerHTML = `<p> ${heureAug} h </p>`;
+        caseHour[l-1].innerHTML += `<div> ${Math.round(data.hourly[l*3].temp)}°C </div>`;
         
         let indiceSemaine = jour + l - 1;
         if (indiceSemaine > 6) {
@@ -139,8 +139,8 @@ fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${lon
         }
         let jourPrecis = semaine[indiceSemaine];
         
-        caseDay[l].innerHTML = `<p> ${jourPrecis} </p>`;
-        caseDay[l].innerHTML += `<div> ${Math.round(data.daily[l].temp.day)}°C </div>`;
+        caseDay[l-1].innerHTML = `<p> ${jourPrecis} </p>`;
+        caseDay[l-1].innerHTML += `<div> ${Math.round(data.daily[l].temp.day)}°C </div>`;
         
     }
 
