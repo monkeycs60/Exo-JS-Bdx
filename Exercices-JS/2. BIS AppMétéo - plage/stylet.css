@@ -39,18 +39,24 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-flow: row;
           flex-flow: row;
-  background: green;
   width: 100%;
-  border: 5px solid yellow;
   height: 25%;
 }
 
 .title {
-  width: 20%;
-  margin: auto;
-  text-align: center;
+  width: 30%;
   font-size: 2em;
+  height: 100%;
   border: 5px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .weatherPannel {
@@ -263,7 +269,6 @@ body {
           justify-content: center;
   height: 100%;
   width: 100%;
-  background: yellow;
 }
 
 .boutons {
@@ -290,9 +295,10 @@ button {
 }
 
 .modale {
+  z-index: 4;
   visibility: hidden;
   position: absolute;
-  left: 25vw;
+  left: 35vw;
   top: 40vh;
   width: 300px;
   height: 300px;
@@ -308,7 +314,6 @@ button {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background: green;
   height: 100%;
   width: 60%;
 }
@@ -329,8 +334,7 @@ button {
   width: 80%;
   margin: auto;
   height: 10%;
-  margin-bottom: 5%;
-  margin-top: 5%;
+  margin-top: 1%;
 }
 
 .h, .d {
@@ -634,6 +638,10 @@ button {
 }
 
 .footer {
-  margin-top: 5%;
+  margin-top: 3%;
+}
+
+.end {
+  visibility: hidden;
 }
 /*# sourceMappingURL=stylet.css.map */
