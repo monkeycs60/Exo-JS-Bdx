@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Roboto-Regular;
+  src: url(/Roboto-Regular.ttf);
+}
+
 *, ::before, ::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -33,7 +38,7 @@ body {
   -ms-grid-columns: (1fr)[10];
       grid-template-columns: repeat(10, 1fr);
   width: 90%;
-  height: 80%;
+  height: 90%;
   margin: auto;
   margin-top: 2%;
   border: 1px solid white;
@@ -672,5 +677,9 @@ button {
 
 .disparition {
   visibility: hidden;
+}
+
+.h1, .d1 {
+  border: none;
 }
 /*# sourceMappingURL=stylet.css.map */

@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Roboto-Regular;
+    src: url(/Roboto-Regular.ttf);
+}
+
 @mixin caseDetails {
     height: 70%;
     display: flex;
@@ -39,7 +44,7 @@ overflow-x: hidden;
     grid-template-rows: 1fr 3fr 4fr 1fr 1fr;
     grid-template-columns: repeat(10, 1fr);
 width: 90%;
-height: 80%;
+height: 90%;
 margin: auto;
 margin-top: 2%;
 border: 1px solid white;
@@ -160,11 +165,7 @@ video {
 
     
 }
-.vignette1 {
-    
-   
-   
-}
+
 button {
     
     z-index: 3;
@@ -293,4 +294,8 @@ button {
 .disparition {
     // opacity: 0;
     visibility: hidden;
+}
+
+.h1, .d1 {
+    border: none;
 }

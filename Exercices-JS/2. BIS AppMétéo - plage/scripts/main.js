@@ -1,3 +1,6 @@
+
+
+
 // On géocalise l'utilisateur
 navigator.geolocation.getCurrentPosition(success);
 
@@ -326,7 +329,7 @@ fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=44.797829&lon=-1.2345
     let heureActuelle = new Date().getHours();
 
     let aSup = document.getElementsByClassName("addendum");
-    for (let l = 0; l < 8; l++) {
+    for (let l = 1; l < 8; l++) {
         let heureAug = heureActuelle + l * 2;
         if (heureAug === 24) {
             heureAug = "00";
@@ -341,16 +344,18 @@ fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=44.797829&lon=-1.2345
         // caseHour[l].addEventListener("mouseleave", () => {
         //     aSup.remove();
         // } ) ;
-        
+        console.log(new Date().getDay());
         let indiceSemaine = jour + l - 1;
         if (indiceSemaine > 6) {
-            indiceSemaine -= 7;
+            indiceSemaine -= 6;
         }
         let jourPrecis = semaine[indiceSemaine];
+
+      
         
         caseDay[l].innerHTML = `<p> ${jourPrecis} </p>`;
         caseDay[l].innerHTML += `<div> ${Math.round(data.daily[l].temp.day)}°C </div>`;
-        
+        console.log(jourPrecis);
     }
 
 })
@@ -359,12 +364,30 @@ fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=44.797829&lon=-1.2345
 let charg = document.querySelector(".chargement");
 charg.classList.add("disparition");
 
-fetch(`https://api.windy.com/api/webcams/v2?key=zcAvXCSW4fsVUkC8UC9j9QwgxMYuYirn`)
+fetch(`https://api.windy.com/api/webcams/v2/list/nearby=45.0,-1.2,20/orderby=distance/limit=20/?show=webcams:url&key=zcAvXCSW4fsVUkC8UC9j9QwgxMYuYirn`)
+// nearby=45.0,-1.2,200/orderby=distance
 .then((reponse) => {
     return reponse.json();
 })
 .then((data) => {
-    console.log(data);
+    console.log(data.result.webcams[0].url.current.desktop);
+   
+    
+    
+    let video = document.createElement("video");
+    // video.src=data.result.webcams[0].url.current.desktop;
+    video.src="https://www.windy.com/webcams/1583127872&key=zcAvXCSW4fsVUkC8UC9j9QwgxMYuYirn";
+    // data.result.webcams[0].player.day.embed;
+    // "https://webcams.windy.com/webcams/public/embed/player/1583127872/day"
+   
+    video.poster="/Exercices-JS/2. AppMétéo/ressources/chargement/circles.svg";
+    video.autoplay = true;
+    video.controls = true;
+    video.crossOrigin = "anonymous";
+    video.width = 500;
+    let camLacanau = document.querySelector(".webcam");
+    camLacanau.appendChild(video);
+    
 
 })
 }
