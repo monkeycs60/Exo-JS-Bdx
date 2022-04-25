@@ -41,6 +41,7 @@ body {
           flex-flow: row;
   width: 100%;
   height: 25%;
+  margin-bottom: 2em;
 }
 
 .title {
@@ -57,11 +58,15 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  letter-spacing: 0.1em;
+}
+
+.title-text {
+  text-align: center;
 }
 
 .weatherPannel {
   padding-left: 10%;
-  background: blue;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -88,7 +93,6 @@ body {
 }
 
 .windDirection {
-  background: blue;
   width: 30%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -190,6 +194,7 @@ body {
   gap: 10%;
   border: 2px ridge brown;
   border-radius: 10%;
+  background: white;
 }
 
 .humidity {
@@ -212,6 +217,7 @@ body {
   gap: 10%;
   border: 2px ridge brown;
   border-radius: 10%;
+  background: white;
 }
 
 .tempFeeling {
@@ -234,6 +240,7 @@ body {
   gap: 10%;
   border: 2px ridge brown;
   border-radius: 10%;
+  background: white;
 }
 
 .media-externes {
