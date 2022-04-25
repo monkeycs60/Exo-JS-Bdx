@@ -617,7 +617,7 @@ button {
   z-index: 20;
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 150%;
   background: -webkit-gradient(linear, left top, left bottom, from(sandybrown));
   background: linear-gradient(sandybrown);
   -webkit-transition: visibility 1.5s ease-out;
@@ -629,7 +629,7 @@ button {
   height: 300px;
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 35%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }

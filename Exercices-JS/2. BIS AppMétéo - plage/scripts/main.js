@@ -13,10 +13,12 @@ document.querySelector("#but2").addEventListener("click", () => {
     if (alternance) {
       
         document.querySelector(".modale").style.visibility = "visible";
+        document.querySelector("#but2").innerText = "Fermer";
 
        
     } else {
         document.querySelector(".modale").style.visibility = "hidden";
+        document.querySelector("#but2").innerText = "Détails";
 
     }
 });
@@ -28,10 +30,12 @@ document.querySelector("#but").addEventListener("click", () => {
     alternance2 = !alternance2;
     if (alternance2) {
         scriptVignette.style.transform = "scale(2) translateY(-5%)";
+        document.querySelector("#but").innerText = "Retour";
         
     
     } else {
         scriptVignette.style.transform="scale(1)";
+        document.querySelector("#but").innerText = "Zoom";
 
     }
 });
@@ -327,7 +331,7 @@ fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=44.797829&lon=-1.2345
     tempFeeling[0].innerHTML += `<div class='detailed'> ${Math.round(data.current.feels_like)} °C </div>`;
    
     let heureActuelle = new Date().getHours();
-
+console.log(data.daily);
     let aSup = document.getElementsByClassName("addendum");
     for (let l = 1; l < 8; l++) {
         let heureAug = heureActuelle + l * 2;
@@ -342,7 +346,7 @@ fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=44.797829&lon=-1.2345
         console.log(new Date().getDay());
         let indiceSemaine = jour + l - 1;
         if (indiceSemaine > 6) {
-            indiceSemaine -= 6;
+            indiceSemaine -= 7;
         }
         let jourPrecis = semaine[indiceSemaine];
 
@@ -361,9 +365,6 @@ fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=44.797829&lon=-1.2345
             tooltip.innerHTML += `<p> Indice UV : ${data.hourly[l*2].uvi} / 11+ </p>`;
             tooltip.innerHTML += `<p> Vent : ${Math.round(data.hourly[l*2].wind_speed * 3.6)} km/h  </p>`;
             tooltip.innerHTML += `<p> ${data.hourly[l*2].weather[0].description.charAt(0).toUpperCase()+data.hourly[l*2].weather[0].description.slice(1)}  </p>`;
-            
-            // tooltip.style.left = `${caseHour[l-1].offsetLeft + caseHour[l-1].offsetWidth/2 - tooltip.offsetWidth/2}px`;
-            // tooltip.style.top = `${caseHour[l-1].offsetTop - tooltip.offsetHeight - 10}px`;
             caseHour[l-1].appendChild(tooltip);
         }
         );
@@ -382,9 +383,6 @@ fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=44.797829&lon=-1.2345
             tooltip.innerHTML += `<p> Indice UV : ${data.daily[l].uvi} / 11+ </p>`;
             tooltip.innerHTML += `<p> Vent : ${Math.round(data.daily[l].wind_speed * 3.6)} km/h </p>`;
             tooltip.innerHTML += `<p> ${data.daily[l].weather[0].description.charAt(0).toUpperCase()+data.daily[l].weather[0].description.slice(1)}  </p>`;
-            
-            // tooltip.style.left = `${caseDay[l-1].offsetLeft + caseDay[l-1].offsetWidth/2 - tooltip.offsetWidth/2}px`;
-            // tooltip.style.top = `${caseDay[l-1].offsetTop - tooltip.offsetHeight - 10}px`;
             caseDay[l-1].appendChild(tooltip);
         }
         );
@@ -398,18 +396,22 @@ fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=44.797829&lon=-1.2345
 })
 
 
-let charg = document.querySelector(".chargement");
-charg.classList.add("disparition");
 
-// fetch(`https://api.windy.com/api/webcams/v2/list/nearby=45.0,-1.2,20/orderby=distance/limit=20/?show=webcams:url&key=zcAvXCSW4fsVUkC8UC9j9QwgxMYuYirn`)
-// // nearby=45.0,-1.2,200/orderby=distance
-// .then((reponse) => {
-//     return reponse.json();
-// })
-// .then((data) => {
-//     console.log(data.result.webcams[0].url.current.desktop);
+
+fetch(`https://api.windy.com/api/webcams/v2/list/nearby=45.0,-1.2,20/orderby=distance/limit=20/?show=webcams:player&key=zcAvXCSW4fsVUkC8UC9j9QwgxMYuYirn`)
+// nearby=45.0,-1.2,200/orderby=distance
+.then((reponse) => {
+    return reponse.json();
+})
+.then((data) => {
+    console.log(data.result.webcams[0].player);
    
+    let videor = document.querySelector(".video");
+    let webcams = document.createElement("div");
+    webcams.innerHTML = `<iframe width="760" height="415" src="https://webcams.windy.com/webcams/public/embed/player/1583127872/day" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+    videor.appendChild(webcams);
     
+})
     
 //     let video = document.createElement("video");
 //     // video.src=data.result.webcams[0].url.current.desktop;
@@ -427,6 +429,8 @@ charg.classList.add("disparition");
      
 
 // })
+let charg = document.querySelector(".chargement");
+charg.classList.add("disparition");
 }
 
 
