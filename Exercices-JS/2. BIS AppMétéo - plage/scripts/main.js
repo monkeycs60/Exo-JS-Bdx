@@ -338,12 +338,7 @@ fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=44.797829&lon=-1.2345
         }
         caseHour[l-1].innerHTML = `<p> ${heureAug} h </p>`;
         caseHour[l-1].innerHTML += `<div> ${Math.round(data.hourly[l*3].temp)}°C </div>`;
-        // caseHour[l].addEventListener("mouseenter", () => {
-        //     caseHour[l].innerHTML += "<p class='addendum'> coucou </p>";
-        // } )
-        // caseHour[l].addEventListener("mouseleave", () => {
-        //     aSup.remove();
-        // } ) ;
+     
         console.log(new Date().getDay());
         let indiceSemaine = jour + l - 1;
         if (indiceSemaine > 6) {
@@ -351,11 +346,30 @@ fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=44.797829&lon=-1.2345
         }
         let jourPrecis = semaine[indiceSemaine];
 
-      
+        console.log(data.hourly[l*2].clouds);
         
         caseDay[l-1].innerHTML = `<p> ${jourPrecis} </p>`;
         caseDay[l-1].innerHTML += `<div> ${Math.round(data.daily[l].temp.day)}°C </div>`;
         console.log(jourPrecis);
+        // do a tooltip while hovering caseHour[l]
+        caseHour[l-1].addEventListener("mouseover", function() {
+            let tooltip = document.createElement("div");
+            tooltip.classList.add("tooltip");
+            tooltip.innerHTML = `<p> Nuage : ${data.hourly[l*2].clouds}  </p>`;
+            tooltip.innerHTML += `<p> Humidité : ${data.hourly[l*2].humidity}  </p>`;
+            tooltip.innerHTML += `<p> ${data.hourly[l*2].feels_like}  </p>`;
+            tooltip.innerHTML += `<p> ${data.hourly[l*2].clouds}  </p>`;
+            tooltip.innerHTML += `<div> ${Math.round(data.hourly[l*3].temp)}°C </div>`;
+            // tooltip.style.left = `${caseHour[l-1].offsetLeft + caseHour[l-1].offsetWidth/2 - tooltip.offsetWidth/2}px`;
+            // tooltip.style.top = `${caseHour[l-1].offsetTop - tooltip.offsetHeight - 10}px`;
+            caseHour[l-1].appendChild(tooltip);
+        }
+        );
+        caseHour[l-1].addEventListener("mouseout", function() {
+            let tooltip = document.querySelector(".tooltip");
+            caseHour[l-1].removeChild(tooltip);
+        }
+        );
     }
 
 })
@@ -364,32 +378,32 @@ fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=44.797829&lon=-1.2345
 let charg = document.querySelector(".chargement");
 charg.classList.add("disparition");
 
-fetch(`https://api.windy.com/api/webcams/v2/list/nearby=45.0,-1.2,20/orderby=distance/limit=20/?show=webcams:url&key=zcAvXCSW4fsVUkC8UC9j9QwgxMYuYirn`)
-// nearby=45.0,-1.2,200/orderby=distance
-.then((reponse) => {
-    return reponse.json();
-})
-.then((data) => {
-    console.log(data.result.webcams[0].url.current.desktop);
+// fetch(`https://api.windy.com/api/webcams/v2/list/nearby=45.0,-1.2,20/orderby=distance/limit=20/?show=webcams:url&key=zcAvXCSW4fsVUkC8UC9j9QwgxMYuYirn`)
+// // nearby=45.0,-1.2,200/orderby=distance
+// .then((reponse) => {
+//     return reponse.json();
+// })
+// .then((data) => {
+//     console.log(data.result.webcams[0].url.current.desktop);
    
     
     
-    let video = document.createElement("video");
-    // video.src=data.result.webcams[0].url.current.desktop;
-    video.src="https://www.windy.com/webcams/1583127872&key=zcAvXCSW4fsVUkC8UC9j9QwgxMYuYirn";
-    // data.result.webcams[0].player.day.embed;
-    // "https://webcams.windy.com/webcams/public/embed/player/1583127872/day"
+//     let video = document.createElement("video");
+//     // video.src=data.result.webcams[0].url.current.desktop;
+//     video.src="https://www.windy.com/webcams/1583127872&key=zcAvXCSW4fsVUkC8UC9j9QwgxMYuYirn";
+//     // data.result.webcams[0].player.day.embed;
+//     // "https://webcams.windy.com/webcams/public/embed/player/1583127872/day"
    
-    video.poster="/Exercices-JS/2. AppMétéo/ressources/chargement/circles.svg";
-    video.autoplay = true;
-    video.controls = true;
-    video.crossOrigin = "anonymous";
-    video.width = 500;
-    let camLacanau = document.querySelector(".webcam");
-    camLacanau.appendChild(video);
-    
+//     video.poster="/Exercices-JS/2. AppMétéo/ressources/chargement/circles.svg";
+//     video.autoplay = true;
+//     video.controls = true;
+//     video.crossOrigin = "anonymous";
+//     video.width = 500;
+//     let camLacanau = document.querySelector(".webcam");
+//     camLacanau.appendChild(video);
+     
 
-})
+// })
 }
 
 
