@@ -649,8 +649,11 @@ button {
 .tooltip {
   z-index: 5;
   color: pink;
-  font-size: 2em;
+  font-size: 1em;
   position: absolute;
+  top: -20vmin;
   background: grey;
+  text-align: center;
+  width: 300px;
 }
 /*# sourceMappingURL=stylet.css.map */

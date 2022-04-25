@@ -355,11 +355,13 @@ fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=44.797829&lon=-1.2345
         caseHour[l-1].addEventListener("mouseover", function() {
             let tooltip = document.createElement("div");
             tooltip.classList.add("tooltip");
-            tooltip.innerHTML = `<p> Nuage : ${data.hourly[l*2].clouds}  </p>`;
-            tooltip.innerHTML += `<p> Humidité : ${data.hourly[l*2].humidity}  </p>`;
-            tooltip.innerHTML += `<p> ${data.hourly[l*2].feels_like}  </p>`;
-            tooltip.innerHTML += `<p> ${data.hourly[l*2].clouds}  </p>`;
-            tooltip.innerHTML += `<div> ${Math.round(data.hourly[l*3].temp)}°C </div>`;
+            tooltip.innerHTML += `<p> Température ressentie : ${data.hourly[l*2].feels_like} °C </p>`;
+            tooltip.innerHTML += `<p> Nuage : ${data.hourly[l*2].clouds} % </p>`;
+            tooltip.innerHTML += `<p> Humidité : ${data.hourly[l*2].humidity} %  </p>`;
+            tooltip.innerHTML += `<p> Indice UV : ${data.hourly[l*2].uvi} / 11+ </p>`;
+            tooltip.innerHTML += `<p> Vent : ${Math.round(data.hourly[l*2].wind_speed * 3.6)} km/h  </p>`;
+            tooltip.innerHTML += `<p> ${data.hourly[l*2].weather[0].description.charAt(0).toUpperCase()+data.hourly[l*2].weather[0].description.slice(1)}  </p>`;
+            
             // tooltip.style.left = `${caseHour[l-1].offsetLeft + caseHour[l-1].offsetWidth/2 - tooltip.offsetWidth/2}px`;
             // tooltip.style.top = `${caseHour[l-1].offsetTop - tooltip.offsetHeight - 10}px`;
             caseHour[l-1].appendChild(tooltip);
@@ -368,6 +370,27 @@ fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=44.797829&lon=-1.2345
         caseHour[l-1].addEventListener("mouseout", function() {
             let tooltip = document.querySelector(".tooltip");
             caseHour[l-1].removeChild(tooltip);
+        }
+        );
+        //do a tooltip while hovering caseDay[l]
+        caseDay[l-1].addEventListener("mouseover", function() {
+            let tooltip = document.createElement("div");
+            tooltip.classList.add("tooltip");
+            tooltip.innerHTML += `<p> Température ressentie : ${data.daily[l].feels_like.day} °C </p>`;
+            tooltip.innerHTML += `<p> Nuage : ${data.daily[l].clouds} % </p>`;
+            tooltip.innerHTML += `<p> Humidité : ${data.daily[l].humidity} % </p>`;
+            tooltip.innerHTML += `<p> Indice UV : ${data.daily[l].uvi} / 11+ </p>`;
+            tooltip.innerHTML += `<p> Vent : ${Math.round(data.daily[l].wind_speed * 3.6)} km/h </p>`;
+            tooltip.innerHTML += `<p> ${data.daily[l].weather[0].description.charAt(0).toUpperCase()+data.daily[l].weather[0].description.slice(1)}  </p>`;
+            
+            // tooltip.style.left = `${caseDay[l-1].offsetLeft + caseDay[l-1].offsetWidth/2 - tooltip.offsetWidth/2}px`;
+            // tooltip.style.top = `${caseDay[l-1].offsetTop - tooltip.offsetHeight - 10}px`;
+            caseDay[l-1].appendChild(tooltip);
+        }
+        );
+        caseDay[l-1].addEventListener("mouseout", function() {
+            let tooltip = document.querySelector(".tooltip");
+            caseDay[l-1].removeChild(tooltip);
         }
         );
     }
