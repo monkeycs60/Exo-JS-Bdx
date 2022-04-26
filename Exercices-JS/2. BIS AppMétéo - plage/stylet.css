@@ -25,6 +25,13 @@ body {
           user-select: none;
 }
 
+@media screen and (max-width: 600px) {
+  body {
+    font-size: calc(1vmin + 5px);
+    width: 100%;
+  }
+}
+
 .container {
   width: 90%;
   margin: auto;
@@ -48,7 +55,7 @@ body {
           flex-flow: row;
   width: 100%;
   height: 25%;
-  margin-bottom: 2em;
+  margin-bottom: 4em;
 }
 
 @media screen and (max-width: 900px) {
@@ -84,6 +91,12 @@ body {
     width: 100%;
     height: 30%;
     border: 5px solid black;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .title {
+    font-size: 1.5em;
   }
 }
 
@@ -195,9 +208,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-flow: column;
           flex-flow: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -514,6 +524,12 @@ button {
     width: 100%;
     gap: 5%;
     margin-top: 30em;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .grid-prevision-h {
+    margin-top: 60em;
   }
 }
 

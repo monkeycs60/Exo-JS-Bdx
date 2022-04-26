@@ -32,7 +32,13 @@ body {
     font-size: calc(2vmin + 5px);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     user-select: none;
-}
+    @media screen and (max-width: 600px) {
+        font-size: calc(1vmin + 5px);
+        width: 100%;
+    }
+        
+    }
+
 
 .container {
     width: 90%;
@@ -51,7 +57,7 @@ body {
     flex-flow: row;
     width: 100%;
     height: 25%;
-    margin-bottom: 2em;
+    margin-bottom: 4em;
     @media screen and (max-width: 900px) {
         flex-flow: column;
     }
@@ -76,8 +82,14 @@ body {
         height: 30%;
         border: 5px solid black;
     }
+    @media screen and (max-width:600px) {
+        font-size: 1.5em;
         
     }
+        
+    }
+        
+  
 
 
 
@@ -171,7 +183,6 @@ body {
     width: 30%;
     display: flex;
     flex-flow: column;
-    justify-content: center;
     align-items: center;
     @media screen and (max-width: 900px) {
         width: 100%;
@@ -199,6 +210,7 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    
     @media screen and (max-width: 900px) {
         margin-top: 2em;
         flex-flow: column;
@@ -264,8 +276,11 @@ body {
         width: 100%;
         margin-bottom: 10em;
     }
+  
         
     }
+        
+  
 
 
 .vignette1 {
@@ -361,8 +376,16 @@ button {
         gap: 5%;
         margin-top: 30em;
     }
+    @media screen and (max-width: 900px) {
+        
+        margin-top: 60em;
+    }
         
     }
+        
+    
+        
+    
         
     
     
