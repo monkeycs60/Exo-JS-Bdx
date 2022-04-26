@@ -38,7 +38,13 @@ body {
     width: 90%;
     margin: auto;
     height: 100vh;
-}
+    @media screen and (max-width: 900px) {
+        width: 100%;
+        margin: 0;
+    }
+        
+    }
+
 
 .top-pannel {
     display: flex;
@@ -46,8 +52,13 @@ body {
     width: 100%;
     height: 25%;
     margin-bottom: 2em;
+    @media screen and (max-width: 900px) {
+        flex-flow: column;
+    }
+        
+    }
+  
 
-}
 
 .title {
     width: 30%;
@@ -58,8 +69,17 @@ body {
     align-items: center;
     justify-content: center;
     letter-spacing: 0.1em;
+    @media screen and (max-width:900px) {
+        margin-top: 0.3em;
+        font-size: 1em;
+        width: 100%;
+        height: 30%;
+        border: 5px solid black;
+    }
+        
+    }
 
-}
+
 
 .title-text {
     text-align: center;
@@ -71,7 +91,19 @@ body {
     width: 70%;
     align-items: center;
     gap: 10%;
-}
+    @media screen and (max-width: 900px) {
+        flex-flow: row;
+        justify-content: space-around;
+       height: 100%;
+        width: 100%;
+        padding-left: 0;
+        gap: 0;
+        font-size: 0.5em;
+       
+    }
+        
+    }
+
 
 .old {
     font-family: fantasy;
@@ -81,14 +113,58 @@ body {
     max-height: 30vh;
 }
 
-.weatherIcon {}
+.weatherIcon {
+    @media screen and (max-width: 900px) {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+       
+       
+      
+        img {
+            width: 20vw;
+        }
+        
+    }
+        
+    }
+        
+    
 
-.weatherCurrentData {}
+.weatherCurrentData {
+    @media screen and (max-width: 900px) {
+        width: 100%;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+
+     
+        
+        
+    }
+        
+    }
+        
+  
 
 .weather-details-pannel {
     display: flex;
     height: 30%;
-}
+    @media screen and (max-width: 1600px) {
+        height: 15%;
+        margin-bottom: 3em;
+    }
+    @media screen and (max-width: 900px) {
+        height: 50%;
+        margin-bottom: 3em;
+        flex-flow: column;
+    }
+        
+    }
+        
+    
+
 
 .windDirection {
     
@@ -97,20 +173,44 @@ body {
     flex-flow: column;
     justify-content: center;
     align-items: center;
-}
+    @media screen and (max-width: 900px) {
+        width: 100%;
+        height: 70%;
+ 
+    }
+        
+    
+
 
 .windDirection img {
     width: 13vw;
-}
+    @media screen and (max-width: 900px) {
+        width: 25vw;
+    }
+        
+    }
+        
+    }
+
 
 .tableau-details {
-    width: 70%;
-    height: 100%;
+    width: 50%;
+    height: 50%;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    @media screen and (max-width: 900px) {
+        margin-top: 2em;
+        flex-flow: column;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+        
+    }
 
-}
+
 
 .intro {
     text-decoration: underline;
@@ -146,12 +246,27 @@ body {
     display: flex;
     flex-flow: row;
     margin-bottom: 3%;
-}
+    @media screen and (max-width: 1600px) {
+        flex-flow: column;
+        margin-top: 4em;
+        margin-bottom: 2em;
+        gap: 5em;
+    }
+        
+    }
+
 
 
 .vignette {
     width: 40%;
-}
+    @media screen and (max-width: 1600px) {
+        order: 2;
+        width: 100%;
+        margin-bottom: 10em;
+    }
+        
+    }
+
 
 .vignette1 {
     display: flex;
@@ -160,7 +275,12 @@ body {
     justify-content: center;
     height: 100%;
     width: 100%;
-}
+   
+        
+    
+        
+    }
+
 
 .boutons {
     margin-top: 2%;
@@ -193,8 +313,25 @@ button {
     top: 40vh;
     width: 300px;
     height: 300px;
+    @media screen and (max-width: 1600px) {
+        left: 25vw;
+        top: 30vh;
+    }
+    @media screen and (max-width: 900px) {
+        left: 5vw;
+        top: 45vh;
+        
+    }
+        
+    }
+        
+    
+        
+    
+      
+    
 
-}
+
 
 .webcam {
     display: flex;
@@ -202,7 +339,13 @@ button {
     justify-content: center;
     height: 100%;
     width: 60%;
-}
+    @media screen and (max-width: 1600px) {
+        width: 100%;
+        order: 1;
+    }
+        
+    }
+
 
 
 .grid-prevision-h {
@@ -211,8 +354,20 @@ button {
     width: 80%;
     margin: auto;
     height: 10%;
+    @media screen and (max-width: 1600px) {
+        flex-flow: column;
+        height: 100%;
+        width: 100%;
+        gap: 5%;
+        margin-top: 30em;
+    }
+        
+    }
+        
     
-}
+    
+    
+
 
 .grid-prevision-d {
     display: flex;
@@ -220,7 +375,14 @@ button {
     margin: auto;
     height: 10%;
     margin-top: 1%;
-}
+    @media screen and (max-width: 1600px) {
+        margin-top: 3em;
+    }
+        
+    }
+        
+    
+
 
 
 .h {
@@ -299,7 +461,16 @@ button {
     top: -20vmin;
     background: grey;
     text-align: center;
-    width: 300px;
+    width: 17vw;
     
 }
 
+.video iframe {
+    @media screen and (max-width: 900px) {
+        width: 400px;   
+        height: 310px;
+    }
+        
+    }
+   
+    
