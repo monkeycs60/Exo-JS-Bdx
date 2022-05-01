@@ -24,6 +24,7 @@ fetch(`https://pokeapi.co/api/v2/pokemon-species/charmander`)
                     <p> ${pokemon.name}</p>
                 `;
                 grid.appendChild(card);
+                
             
                 //fetch sprite for each pokemon
                 fetch(pokemon.url)  
@@ -38,17 +39,24 @@ fetch(`https://pokeapi.co/api/v2/pokemon-species/charmander`)
             })
                 
             });
-           
-    
+           //fetch pokemon name in french in pokemon-species
+            fetch('https://pokeapi.co/api/v2/pokemon-species/')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+//for each pokemon-species, fetch the french name
+                data.results.forEach(pokemon => {
+              const namePokemon = document.createElement('p');
+                namePokemon.innerHTML = pokemon.name;
+                grid.appendChild(namePokemon);
+
+
+                    })
+                }
+            )
         }
     
     appelPoke();
 
-     // fetch(`${data.results[0].url}`)
-            // .then(response => response.json())
-            // .then(data => {
-            //     console.log(data);
-           
-            // })
-    
+   
     
