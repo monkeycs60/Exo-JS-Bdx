@@ -1,0 +1,94 @@
+@font-face {
+  font-family: 'pocket_monkregular';
+  src: url("/fonts/pocketmonk-15ze-webfont.woff2") format("woff2"), url("/fonts/pocketmonk-15ze-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+*,
+::before,
+::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #3a3939;
+  color: white;
+  font-size: calc(2vmin + 5px);
+  width: 100vw;
+  height: 100vh;
+  font-family: 'pocket_monkregular';
+}
+
+h1 {
+  padding: 0.6em;
+  font-size: 2em;
+  text-align: center;
+  color: #3b5da7;
+}
+
+.search-bar {
+  padding: 2em;
+  text-align: center;
+}
+
+input {
+  font-size: 1em;
+  width: 25vw;
+  height: 2em;
+  font-family: 'pocket_monkregular';
+  text-align: center;
+  background: #5a5a5a;
+}
+
+input::-webkit-input-placeholder {
+  color: #ffcc01;
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+input:-ms-input-placeholder {
+  color: #ffcc01;
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+input::-ms-input-placeholder {
+  color: #ffcc01;
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+input::placeholder {
+  color: #ffcc01;
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+input:focus {
+  background: #b89d30;
+  color: #3b5da7;
+}
+
+button {
+  margin-left: 1em;
+  font-size: 1em;
+  width: 10vw;
+  height: 2em;
+  background: #ffcc01;
+  border: none;
+  font-family: 'pocket_monkregular';
+  border-radius: 10px;
+  -webkit-transition: width 1s ease-in-out;
+  transition: width 1s ease-in-out;
+}
+
+button:hover {
+  background: #3b5da7;
+  width: 8vw;
+  color: white;
+}
+/*# sourceMappingURL=stylet.css.map */
