@@ -35,6 +35,15 @@ h1 {
   text-align: center;
 }
 
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 input {
   font-size: 1em;
   width: 25vw;
@@ -73,6 +82,10 @@ input:focus {
   color: #3b5da7;
 }
 
+.socle-bouton {
+  width: 10vw;
+}
+
 button {
   margin-left: 1em;
   font-size: 1em;
@@ -82,8 +95,8 @@ button {
   border: none;
   font-family: 'pocket_monkregular';
   border-radius: 10px;
-  -webkit-transition: width 1s ease-in-out;
-  transition: width 1s ease-in-out;
+  -webkit-transition: width 1s ease;
+  transition: width 1s ease;
 }
 
 button:hover {

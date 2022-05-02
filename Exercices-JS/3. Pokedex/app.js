@@ -46,6 +46,7 @@ fetch(`https://pokeapi.co/api/v2/pokemon-species/charmander`)
                 console.log(data);
 //for each pokemon-species, fetch the french name
                 data.results.forEach(pokemon => {
+                    console.log(pokemon);
               const namePokemon = document.createElement('p');
                 namePokemon.innerHTML = pokemon.name;
                 grid.appendChild(namePokemon);
