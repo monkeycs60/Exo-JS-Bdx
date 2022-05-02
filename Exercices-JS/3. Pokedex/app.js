@@ -101,5 +101,22 @@ fetch(`https://pokeapi.co/api/v2/pokemon-species/charmander`)
     
     appelPoke();
 
+    // addeventlistener to the input, when you search for the first letter of a pokemon, it will display the first pokemon with that letter
+    const search = document.querySelector('input');
+    search.addEventListener('keyup', (e) => {
+        const term = e.target.value.toLowerCase();
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            
+            const pokemonName = card.firstElementChild.textContent;
+            if (pokemonName.toLowerCase().indexOf(term) != -1) {
+                card.style.display = 'flex';
+            } else {
+                card.style.display = 'none';
+            }
+        })
+    })
+
+
    
     
