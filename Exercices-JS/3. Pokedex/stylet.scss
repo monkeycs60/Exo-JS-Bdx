@@ -111,7 +111,13 @@ button {
 
 h4 {
     font-weight: 500;
+    order: 2;
+}
+.id {
+    order: 3;
 }
 .frenchName {
-    color: green;
+    color:  rgb(255, 204, 1);
+    text-shadow: rgb(59, 93, 167) 1px 5px 10px;
+    
 }

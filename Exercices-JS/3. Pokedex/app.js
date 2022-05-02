@@ -86,6 +86,7 @@ fetch(`https://pokeapi.co/api/v2/pokemon-species/charmander`)
                     card.appendChild(frenchName);
                     // create a const for each pokemon ID
                     const id = document.createElement('p');
+                    id.classList.add('id');
                     id.innerHTML = `#${data.id}`;
                     card.appendChild(id);
                    
@@ -104,9 +105,27 @@ fetch(`https://pokeapi.co/api/v2/pokemon-species/charmander`)
 
     // addeventlistener to the input, when you search for the first letter of a pokemon, it will display the first pokemon with that letter
     
+    // const search = document.querySelector('input');
+    // search.addEventListener('keyup', (e) => {
+    //     const searchValue = e.target.value.toLowerCase();
+    //     const cards = document.querySelectorAll('.card');
+    //     cards.forEach(card => {
+    //         const pokemonName = card.querySelector('.frenchName').innerHTML.toLowerCase();
+    //         if (pokemonName.startsWith(searchValue)) {
+    //             card.style.display = 'flex';
+    //         } else {
+    //             card.style.display = 'none';
+    //         }
+    //     })
+    // })
+
+    // addeventerlistener on the button, when you click on it, it will display pokemon with the first letters of the input
     const search = document.querySelector('input');
-    search.addEventListener('keyup', (e) => {
-        const searchValue = e.target.value.toLowerCase();
+    const button = document.querySelector('button');
+    button.addEventListener('click', (e) => {
+        //prevent default
+        e.preventDefault();
+        const searchValue = document.querySelector('input').value.toLowerCase();
         const cards = document.querySelectorAll('.card');
         cards.forEach(card => {
             const pokemonName = card.querySelector('.frenchName').innerHTML.toLowerCase();
@@ -118,22 +137,13 @@ fetch(`https://pokeapi.co/api/v2/pokemon-species/charmander`)
         })
     })
 
+     
+ 
+  
+
 
     
-    // const search = document.querySelector('input');
-    // search.addEventListener('keyup', (e) => {
-    //     const term = e.target.value.toLowerCase();
-    //     const cards = document.querySelectorAll('.card');
-    //     cards.forEach(card => {
-            
-    //         const pokemonName = document.getElementsByClassName('frenchName').textContent;
-    //         if (pokemonName.toLowerCase().indexOf(term) != -1) {
-    //             card.style.display = 'flex';
-    //         } else {
-    //             card.style.display = 'none';
-    //         }
-    //     })
-    // })
+  
 
 console.log(document.getElementsByClassName('frenchName'));
 
