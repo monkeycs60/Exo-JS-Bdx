@@ -137,4 +137,12 @@ button:hover {
           align-items: center;
   height: 8em;
 }
+
+h4 {
+  font-weight: 500;
+}
+
+.frenchName {
+  color: green;
+}
 /*# sourceMappingURL=stylet.css.map */

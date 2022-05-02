@@ -80,7 +80,8 @@ fetch(`https://pokeapi.co/api/v2/pokemon-species/charmander`)
                 .then(data => {
                     console.log(data);
                    // create a const for each pokemon french name
-                    const frenchName = document.createElement('p');
+                    const frenchName = document.createElement('h4');
+                    frenchName.classList.add('frenchName');
                     frenchName.innerHTML = data.names.find(name => name.language.name === 'fr').name;
                     card.appendChild(frenchName);
                     // create a const for each pokemon ID
@@ -102,14 +103,14 @@ fetch(`https://pokeapi.co/api/v2/pokemon-species/charmander`)
     appelPoke();
 
     // addeventlistener to the input, when you search for the first letter of a pokemon, it will display the first pokemon with that letter
+    
     const search = document.querySelector('input');
     search.addEventListener('keyup', (e) => {
-        const term = e.target.value.toLowerCase();
+        const searchValue = e.target.value.toLowerCase();
         const cards = document.querySelectorAll('.card');
         cards.forEach(card => {
-            
-            const pokemonName = card.firstElementChild.textContent;
-            if (pokemonName.toLowerCase().indexOf(term) != -1) {
+            const pokemonName = card.querySelector('.frenchName').innerHTML.toLowerCase();
+            if (pokemonName.startsWith(searchValue)) {
                 card.style.display = 'flex';
             } else {
                 card.style.display = 'none';
@@ -117,6 +118,24 @@ fetch(`https://pokeapi.co/api/v2/pokemon-species/charmander`)
         })
     })
 
+
+    
+    // const search = document.querySelector('input');
+    // search.addEventListener('keyup', (e) => {
+    //     const term = e.target.value.toLowerCase();
+    //     const cards = document.querySelectorAll('.card');
+    //     cards.forEach(card => {
+            
+    //         const pokemonName = document.getElementsByClassName('frenchName').textContent;
+    //         if (pokemonName.toLowerCase().indexOf(term) != -1) {
+    //             card.style.display = 'flex';
+    //         } else {
+    //             card.style.display = 'none';
+    //         }
+    //     })
+    // })
+
+console.log(document.getElementsByClassName('frenchName'));
 
    
     
