@@ -33,7 +33,44 @@ fetch(`https://pokeapi.co/api/v2/pokemon-species/charmander`)
                     const sprite = document.createElement('img');
                     sprite.src = data.sprites.front_default;
                     card.appendChild(sprite);
-                })
+                    // change background color of each card according to the type of pokemon
+                    if (data.types[0].type.name === 'fire') {
+                        card.style.backgroundColor = '#FF4500';
+                    } else if (data.types[0].type.name === 'water') {
+                        card.style.backgroundColor = '#00BFFF';
+                    } else if (data.types[0].type.name === 'grass') {
+                        card.style.backgroundColor = '#228B22';
+                    } else if (data.types[0].type.name === 'electric') {
+                        card.style.backgroundColor = '#FFD700';
+                    } else if (data.types[0].type.name === 'ground') {
+                        card.style.backgroundColor = '#8B4513';
+                    } else if (data.types[0].type.name === 'flying') {
+                        card.style.backgroundColor = '#87CEEB';
+                    } else if (data.types[0].type.name === 'psychic') {
+                        card.style.backgroundColor = '#FFA500';
+                    } else if (data.types[0].type.name === 'fighting') {
+                        card.style.backgroundColor = '#FF0000';
+                    } else if (data.types[0].type.name === 'poison') {
+                        card.style.backgroundColor = '#800080';
+                    } else if (data.types[0].type.name === 'normal') {
+                        card.style.backgroundColor = '#D3D3D3';
+                    } else if (data.types[0].type.name === 'fairy') {
+                        card.style.backgroundColor = '#FF69B4';
+                    } else if (data.types[0].type.name === 'steel') {
+                        card.style.backgroundColor = '#B0C4DE';
+                    } else if (data.types[0].type.name === 'ice') {
+                        card.style.backgroundColor = '#00FFFF';
+                    } else if (data.types[0].type.name === 'dragon') {
+                        card.style.backgroundColor = '#800080';
+                    } else if (data.types[0].type.name === 'ghost') {
+                        card.style.backgroundColor = '#F8F8FF';
+                    } else if (data.types[0].type.name === 'dark') {
+                        card.style.backgroundColor = '#000000';
+                    } else if (data.types[0].type.name === 'rock') {
+                        card.style.backgroundColor = '#B22222';
+                    } else if (data.types[0].type.name === 'bug') {
+                        card.style.backgroundColor = '#006400';
+                    }})
                 console.log(pokemon.name);
                 //             fetch('https://pokeapi.co/api/v2/pokemon-species/pokemon.name')
                
@@ -50,6 +87,9 @@ fetch(`https://pokeapi.co/api/v2/pokemon-species/charmander`)
                     const id = document.createElement('p');
                     id.innerHTML = `#${data.id}`;
                     card.appendChild(id);
+                   
+                    
+                   
                 })
   
             })
