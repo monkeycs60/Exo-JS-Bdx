@@ -98,34 +98,19 @@ fetch(`https://pokeapi.co/api/v2/pokemon-species/charmander`)
             console.log(data.results.name);
                 
             });
-           //fetch pokemon name in french in pokemon-species
+            let charg = document.querySelector(".chargement");
+            charg.classList.add("disparition");
         }
     
     appelPoke();
 
+
+
     // addeventlistener to the input, when you search for the first letter of a pokemon, it will display the first pokemon with that letter
     
-    // const search = document.querySelector('input');
-    // search.addEventListener('keyup', (e) => {
-    //     const searchValue = e.target.value.toLowerCase();
-    //     const cards = document.querySelectorAll('.card');
-    //     cards.forEach(card => {
-    //         const pokemonName = card.querySelector('.frenchName').innerHTML.toLowerCase();
-    //         if (pokemonName.startsWith(searchValue)) {
-    //             card.style.display = 'flex';
-    //         } else {
-    //             card.style.display = 'none';
-    //         }
-    //     })
-    // })
-
-    // addeventerlistener on the button, when you click on it, it will display pokemon with the first letters of the input
     const search = document.querySelector('input');
-    const button = document.querySelector('button');
-    button.addEventListener('click', (e) => {
-        //prevent default
-        e.preventDefault();
-        const searchValue = document.querySelector('input').value.toLowerCase();
+    search.addEventListener('keyup', (e) => {
+        const searchValue = e.target.value.toLowerCase();
         const cards = document.querySelectorAll('.card');
         cards.forEach(card => {
             const pokemonName = card.querySelector('.frenchName').innerHTML.toLowerCase();
@@ -137,7 +122,32 @@ fetch(`https://pokeapi.co/api/v2/pokemon-species/charmander`)
         })
     })
 
-     
+
+
+    // addeventerlistener on the button, when you click on it, it will display pokemon with the first letters of the input
+    // OPTIONNAL feature : to use the button (not activated yet)
+
+
+
+    // const search = document.querySelector('input');
+    // const button = document.querySelector('button');
+    // button.addEventListener('click', (e) => {
+    //     //prevent default
+    //     e.preventDefault();
+    //     const searchValue = document.querySelector('input').value.toLowerCase();
+    //     const cards = document.querySelectorAll('.card');
+    //     cards.forEach(card => {
+    //         const pokemonName = card.querySelector('.frenchName').innerHTML.toLowerCase();
+    //         if (pokemonName.startsWith(searchValue)) {
+    //             card.style.display = 'flex';
+    //         } else {
+    //             card.style.display = 'none';
+    //         }
+    //     })
+    // })
+
+     // it will display a loader in grid-pokedex while the data is loading
+  
  
   
 
