@@ -98,6 +98,8 @@ let allPokemons = [];
 
 
 
+
+
     // addeventlistener to the input, when you search for the first letter of a pokemon, it will display the first pokemon with that letter
     
     const search = document.querySelector('input');
@@ -146,6 +148,29 @@ let allPokemons = [];
 
     //create infinite scroll for the grid-pokedex
    
+
+//window addeventlistener, reveal the pokemon when you scroll down
+
+//only display cards that are in the viewport
+window.addEventListener('scroll', () => {
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+        if (card.getBoundingClientRect().top - 100 < window.innerHeight) {
+            card.style.display = 'grid';
+        }
+        else {
+            card.style.display = 'none';
+        }
+    })
+})
+
+
+
+
+
+
+
+
 
   
 
