@@ -145,24 +145,38 @@ let allPokemons = [];
  
   
 
-
-    //create infinite scroll for the grid-pokedex
-   
-
-//window addeventlistener, reveal the pokemon when you scroll down
-
 //only display cards that are in the viewport
 window.addEventListener('scroll', () => {
     const cards = document.querySelectorAll('.card');
     cards.forEach(card => {
-        if (card.getBoundingClientRect().top - 100 < window.innerHeight) {
-            card.style.display = 'grid';
+        if (card.getBoundingClientRect().top - 50 < window.innerHeight) {
+            card.style.display = 'flex';    
         }
+       
+
         else {
-            card.style.display = 'none';
+            card.style.display = 'none'; 
+           
         }
+       //when the card is displayed, change the opacity of the card
+        if (card.getBoundingClientRect().top + 180 < window.innerHeight) {
+            card.style.opacity = '0.3';
+        }
+        if (card.getBoundingClientRect().top + 120 > window.innerHeight) {
+            card.style.opacity = '1';
+        }
+        
+
+
+        
+
+
+
     })
 })
+
+
+
 
 
 

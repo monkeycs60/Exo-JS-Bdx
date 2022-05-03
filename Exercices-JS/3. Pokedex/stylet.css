@@ -167,6 +167,8 @@ button:hover {
       -ms-flex-align: center;
           align-items: center;
   height: 8em;
+  -webkit-transition: display 1s ease;
+  transition: display 1s ease;
 }
 
 @media screen and (max-width: 700px) {
