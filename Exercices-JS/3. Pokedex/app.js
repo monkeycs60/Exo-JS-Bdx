@@ -2,14 +2,6 @@ const grid = document.querySelector('.grid-pokedex');
 let allPokemons = [];
 
 
-fetch(`https://pokeapi.co/api/v2/pokemon-species/charmander`)
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-
-            })
-
-    
     
     function appelPoke() {
         fetch('https://pokeapi.co/api/v2/pokemon/?limit=151')
@@ -71,9 +63,7 @@ fetch(`https://pokeapi.co/api/v2/pokemon-species/charmander`)
                     } else if (data.types[0].type.name === 'bug') {
                         card.style.backgroundColor = '#006400';
                     }})
-                console.log(pokemon.name);
-                //             fetch('https://pokeapi.co/api/v2/pokemon-species/pokemon.name')
-               
+              
    
                 fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokemon.name}`)
                 .then(response => response.json())
@@ -100,7 +90,9 @@ fetch(`https://pokeapi.co/api/v2/pokemon-species/charmander`)
             });
             let charg = document.querySelector(".chargement");
             charg.classList.add("disparition");
-        }
+           
+           
+    }
     
     appelPoke();
 
@@ -132,7 +124,7 @@ fetch(`https://pokeapi.co/api/v2/pokemon-species/charmander`)
     // const search = document.querySelector('input');
     // const button = document.querySelector('button');
     // button.addEventListener('click', (e) => {
-    //     //prevent default
+    
     //     e.preventDefault();
     //     const searchValue = document.querySelector('input').value.toLowerCase();
     //     const cards = document.querySelectorAll('.card');
@@ -152,10 +144,9 @@ fetch(`https://pokeapi.co/api/v2/pokemon-species/charmander`)
   
 
 
-    
+    //create infinite scroll for the grid-pokedex
+   
+
   
 
 console.log(document.getElementsByClassName('frenchName'));
-
-   
-    

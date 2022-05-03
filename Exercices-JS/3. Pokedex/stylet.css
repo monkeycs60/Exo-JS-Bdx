@@ -54,6 +54,12 @@ input {
   background: #5a5a5a;
 }
 
+@media screen and (max-width: 1200px) {
+  input {
+    width: 40vw;
+  }
+}
+
 input::-webkit-input-placeholder {
   color: #ffcc01;
   text-align: center;
@@ -106,6 +112,24 @@ button:hover {
   color: white;
 }
 
+@media screen and (max-width: 1200px) {
+  button:hover {
+    width: 13vw;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  button:hover {
+    width: 15vw;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  button {
+    width: 20vw;
+  }
+}
+
 .grid-pokedex {
   width: 70%;
   margin: auto;
@@ -118,6 +142,13 @@ button:hover {
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
   gap: 1em;
+}
+
+@media screen and (max-width: 700px) {
+  .grid-pokedex {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .card {
@@ -136,6 +167,12 @@ button:hover {
       -ms-flex-align: center;
           align-items: center;
   height: 8em;
+}
+
+@media screen and (max-width: 700px) {
+  .card {
+    height: 10em;
+  }
 }
 
 h4 {
