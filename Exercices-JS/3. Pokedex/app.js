@@ -100,10 +100,12 @@ let allPokemons = [];
 
 
 
+
     // addeventlistener to the input, when you search for the first letter of a pokemon, it will display the first pokemon with that letter
-    
+   
     const search = document.querySelector('input');
     search.addEventListener('keyup', (e) => {
+        
         const searchValue = e.target.value.toLowerCase();
         const cards = document.querySelectorAll('.card');
         cards.forEach(card => {
@@ -113,21 +115,24 @@ let allPokemons = [];
             } else {
                 card.style.display = 'none';
             }
+            card.style.opacity = '1';
         })
+     
+        
     })
-
-
+/// machin.textcontent = ah !
+ 
 
     // addeventerlistener on the button, when you click on it, it will display pokemon with the first letters of the input
     // OPTIONNAL feature : to use the button (not activated yet)
 
 
-
     // const search = document.querySelector('input');
     // const button = document.querySelector('button');
     // button.addEventListener('click', (e) => {
-    
+        
     //     e.preventDefault();
+        
     //     const searchValue = document.querySelector('input').value.toLowerCase();
     //     const cards = document.querySelectorAll('.card');
     //     cards.forEach(card => {
@@ -146,46 +151,46 @@ let allPokemons = [];
   
 
 //only display cards that are in the viewport
+
+    
+    
+
 window.addEventListener('scroll', () => {
     const cards = document.querySelectorAll('.card');
+   //when you write something in the text area, then you cannot activate scroll
+    
+
+   
+    
     cards.forEach(card => {
         if (card.getBoundingClientRect().top - 50 < window.innerHeight) {
             card.style.display = 'flex';    
         }
-       
-
+        
+        
         else {
             card.style.display = 'none'; 
-           
+            
         }
-       //when the card is displayed, change the opacity of the card
+        //when the card is displayed, change the opacity of the card
         if (card.getBoundingClientRect().top + 180 < window.innerHeight) {
-            card.style.opacity = '0.3';
-        }
-        if (card.getBoundingClientRect().top + 120 > window.innerHeight) {
             card.style.opacity = '1';
-        }
-        
-
-
-        
-
-
-
+            }
+            if (card.getBoundingClientRect().top + 120 > window.innerHeight) {
+                card.style.opacity = '0.3';
+            }
+            
+            
+        })
+    
     })
-})
 
+console.log(window.innerHeight);
 
+console.log(document.querySelector('input').value);
 
-
-
-
-
-
-
-
-
-
-  
-
-console.log(document.getElementsByClassName('frenchName'));
+if (document.querySelector('input').value != '') { 
+    console.log('not ok');
+}
+   
+console.log(document.querySelector('input').value);

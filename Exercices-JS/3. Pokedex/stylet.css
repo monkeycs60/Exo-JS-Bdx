@@ -131,16 +131,16 @@ button:hover {
 }
 
 .grid-pokedex {
-  width: 70%;
+  width: 85%;
   margin: auto;
-  margin-top: 5em;
+  margin-top: 2em;
   display: -ms-grid;
   display: grid;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -ms-grid-columns: (1fr)[4];
-      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
   gap: 1em;
 }
 
