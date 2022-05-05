@@ -120,7 +120,7 @@ let allPokemons = [];
      
         
     })
-/// machin.textcontent = ah !
+
  
 
     // addeventerlistener on the button, when you click on it, it will display pokemon with the first letters of the input
@@ -173,10 +173,10 @@ window.addEventListener('scroll', () => {
             
         }
         //when the card is displayed, change the opacity of the card
-        if (card.getBoundingClientRect().top + 180 < window.innerHeight) {
+        if (card.getBoundingClientRect().top + 250 < window.innerHeight) {
             card.style.opacity = '1';
             }
-            if (card.getBoundingClientRect().top + 120 > window.innerHeight) {
+           else  {
                 card.style.opacity = '0.3';
             }
             
