@@ -174,7 +174,12 @@ h4 {
 .disparition {
     visibility: hidden;
 }
-// .visible {
-//     visibility: visible;
-//     color: red;
-// }
+
+
+footer {
+    margin-top: 4em;
+    text-align: center;
+    border-top: 3px ridge rgb(59, 93, 167);
+    padding-top: 0.3em;
+    color: rgb(255, 204, 1);
+}
