@@ -139,14 +139,14 @@ button:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -ms-grid-columns: (1fr)[5];
+  -ms-grid-columns: (1fr);
       grid-template-columns: repeat(5, 1fr);
   gap: 1em;
 }
 
 @media screen and (max-width: 700px) {
   .grid-pokedex {
-    -ms-grid-columns: (1fr)[2];
+    -ms-grid-columns: (1fr);
         grid-template-columns: repeat(2, 1fr);
   }
 }
