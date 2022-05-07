@@ -99,10 +99,10 @@ function appelPoke() {
   charg.classList.add("disparition");
 }
 
-//we call the function created above
+//call the function created above
 appelPoke();
 
-// we are listening to the input, when you enter one or more letters in the input, it will display the pokemons starting with that same letter(s)
+// listening to the input, when you enter one or more letters in the input, it will display the pokemons starting with that same letter(s)
 const search = document.querySelector("input");
 search.addEventListener("keyup", (e) => {
   const searchValue = e.target.value.toLowerCase();
@@ -165,10 +165,10 @@ window.addEventListener("scroll", () => {
   });
 });
 
-//only display the footer when the user scrolls down (400px under the bottom of the page)
+//only display the footer when the user scrolls down (800px under the bottom of the page)
 window.addEventListener("scroll", () => {
   const footer = document.querySelector("footer");
-  if (window.scrollY > 400) {
+  if (window.scrollY > 800) {
     footer.style.display = "block";
   } else {
     footer.style.display = "none";
