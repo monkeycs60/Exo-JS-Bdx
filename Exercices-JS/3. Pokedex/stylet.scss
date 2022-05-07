@@ -1,3 +1,5 @@
+// importation Pokemon font
+
 @font-face {
     font-family: 'pocket_monkregular';
     src: url('/fonts/pocketmonk-15ze-webfont.woff2') format('woff2'),
@@ -7,7 +9,7 @@
 
 }
 
-
+// reset css
 *,
 ::before,
 ::after {
@@ -76,6 +78,7 @@ input {
 .socle-bouton {
     width: 10vw;
 }
+
 button {
     margin-left: 1em;
     font-size: 1em;
@@ -90,6 +93,9 @@ button {
        background: rgb(59, 93, 167) ;
         width: 8vw;
         color: white;
+
+        //responsive button
+
 @media screen and (max-width: 1200px) {
     width: 13vw;
     
@@ -108,15 +114,18 @@ button {
   }
 }
     
-    
+    //the grid where the API results are displayed
 .grid-pokedex {
     width: 85%;
     margin: auto;
     margin-top: 2em;
+    margin-bottom: 2em;
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(5, 1fr);
     gap: 1em;
+
+    //responsive grid
     @media screen and (max-width: 700px) {
         grid-template-columns: repeat(2, 1fr);
         
@@ -125,6 +134,9 @@ button {
 
 }
 
+//components created with javascript
+
+//the full object
 .card {
     border: 2px white ridge;
     display: flex;
@@ -133,6 +145,8 @@ button {
     align-items: center;
     height: 8em;
     transition: display 1s ease;
+
+    //responsive card
     @media screen and (max-width: 700px) {
         height: 10em;
 
@@ -140,19 +154,23 @@ button {
     }
 }
 
-h4 {
+//pokemon name in French
+
+.frenchName {
     font-weight: 500;
     order: 2;
-}
-.id {
-    order: 3;
-}
-.frenchName {
     color:  rgb(255, 204, 1);
     text-shadow: rgb(59, 93, 167) 1px 5px 10px;
     
 }
 
+
+//n°ID of pokemon
+.id {
+    order: 3;
+}
+
+// loader img while the API results are loading
 .chargement {
     z-index: 20;
     position: absolute;
@@ -170,16 +188,25 @@ h4 {
     }
 }
 
-
+//loader img disappear when the API results are loaded
 .disparition {
     visibility: hidden;
 }
 
-
+//copyright with a fixed position
 footer {
+    display: none;
+    font-size: 0.6em;
     margin-top: 4em;
     text-align: center;
-    border-top: 3px ridge rgb(59, 93, 167);
+    border: 3px ridge rgb(59, 93, 167);
     padding-top: 0.3em;
-    color: rgb(255, 204, 1);
+    color: rgb(59, 93, 167);
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    box-shadow: rgb(255, 204, 1) 0px 0px 5px 3px;
+    background: rgb(58, 57, 57);
+  
 }

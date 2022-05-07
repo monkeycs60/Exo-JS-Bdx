@@ -134,19 +134,20 @@ button:hover {
   width: 85%;
   margin: auto;
   margin-top: 2em;
+  margin-bottom: 2em;
   display: -ms-grid;
   display: grid;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -ms-grid-columns: (1fr);
+  -ms-grid-columns: (1fr)[5];
       grid-template-columns: repeat(5, 1fr);
   gap: 1em;
 }
 
 @media screen and (max-width: 700px) {
   .grid-pokedex {
-    -ms-grid-columns: (1fr);
+    -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -177,22 +178,19 @@ button:hover {
   }
 }
 
-h4 {
+.frenchName {
   font-weight: 500;
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
+  color: #ffcc01;
+  text-shadow: #3b5da7 1px 5px 10px;
 }
 
 .id {
   -webkit-box-ordinal-group: 4;
       -ms-flex-order: 3;
           order: 3;
-}
-
-.frenchName {
-  color: #ffcc01;
-  text-shadow: #3b5da7 1px 5px 10px;
 }
 
 .chargement {
@@ -220,10 +218,20 @@ h4 {
 }
 
 footer {
+  display: none;
+  font-size: 0.6em;
   margin-top: 4em;
   text-align: center;
-  border-top: 3px ridge #3b5da7;
+  border: 3px ridge #3b5da7;
   padding-top: 0.3em;
-  color: #ffcc01;
+  color: #3b5da7;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-box-shadow: #ffcc01 0px 0px 5px 3px;
+          box-shadow: #ffcc01 0px 0px 5px 3px;
+  background: #3a3939;
 }
 /*# sourceMappingURL=stylet.css.map */

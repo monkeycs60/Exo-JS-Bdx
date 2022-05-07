@@ -10,36 +10,41 @@
 
 <body>
 
+    <!-- header, top of the document -->
 
-<header>
-    <h1>Bienvenue dans le Pokedex</h1>
-</header>
+    <header>
+        <h1>Bienvenue dans le Pokedex</h1>
+    </header>
+
+    <!-- search bar and button -->
+
     <div class="search-bar">
+
         <form>
             <input type="text" name="pokedex-search" id="poke-search" placeholder="Chercher un pokémon">
             <div class="socle-bouton">
                 <button id="cliked">Rechercher</button>
             </div>
         </form>
+
     </div>
 
+    <!-- loading logo -->
     <div class="chargement">
         <img src="/Exercices-JS/3. Pokedex/ressources/chargement.svg" alt="" class="src">
     </div>
-    <div class="container">
-
-        <div class="grid-pokedex">
 
 
-        </div>
-
-
+    <!-- list of pokemons, handled by javascript -->
+    <div class="grid-pokedex">
     </div>
 
 
-<footer>
-    <p>Made by Clément SERIZAY</p>
-</footer>
+
+    <!-- footer, bottom of the document -->
+    <footer>
+        <p>Made by Clément SERIZAY</p>
+    </footer>
 
 
     <script src="app.js"></script>
