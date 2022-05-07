@@ -9,7 +9,7 @@ function appelPoke() {
       console.log(data);
 
       //creating the 'card' div, child of grid-pokedex, related to the 'card' class created in the css file
-      
+
       data.results.forEach((pokemon) => {
         const card = document.createElement("div");
         card.classList.add("card");
@@ -17,8 +17,8 @@ function appelPoke() {
 
         //fetch sprite (img) for each pokemon
         fetch(pokemon.url)
-        .then((response) => response.json())
-        .then((data) => {
+          .then((response) => response.json())
+          .then((data) => {
             console.log(data);
 
             //creating img, child of 'card'
@@ -67,8 +67,7 @@ function appelPoke() {
             }
           });
 
-
-          //fetch name of each pokemon in all languages - because the default fetch only displayes the english name
+        //fetch name of each pokemon in all languages - because the default fetch only displayes the english name
 
         fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokemon.name}`)
           .then((response) => response.json())
@@ -92,18 +91,16 @@ function appelPoke() {
             card.appendChild(id);
           });
       });
-    
     });
-    //end of the first call to the api
+  //end of the first call to the api
 
-    //disappearance of the loader when the API datas are fully loaded
+  //disappearance of the loader when the API datas are fully loaded
   let charg = document.querySelector(".chargement");
   charg.classList.add("disparition");
 }
 
 //we call the function created above
 appelPoke();
-
 
 // we are listening to the input, when you enter one or more letters in the input, it will display the pokemons starting with that same letter(s)
 const search = document.querySelector("input");
@@ -124,8 +121,6 @@ search.addEventListener("keyup", (e) => {
     card.style.opacity = "1";
   });
 });
-
-
 
 // OPTIONNAL feature : to use the button (not activated)
 // addeventerlistener on the button, when you click on it, it will display pokemons starting with the same first letters as the input
@@ -148,15 +143,12 @@ search.addEventListener("keyup", (e) => {
 //     })
 // })
 
-
-
-
 //only display cards that are in the viewport (some kind of infinite scroll)
 window.addEventListener("scroll", () => {
   const cards = document.querySelectorAll(".card");
- 
-//with the relative position of the cards (getBoundingClientRect), we can check if they are in the viewport
-//we let a little margin (-50px) so that, next cards will be loaded a bit before we finish our scroll so that it will be less laggy
+
+  //with the relative position of the cards (getBoundingClientRect), we can check if they are in the viewport
+  //we let a little margin (-50px) so that, next cards will be loaded a bit before we finish our scroll so that it will be less laggy
   cards.forEach((card) => {
     if (card.getBoundingClientRect().top - 50 < window.innerHeight) {
       card.style.display = "flex";
@@ -175,15 +167,10 @@ window.addEventListener("scroll", () => {
 
 //only display the footer when the user scrolls down (400px under the bottom of the page)
 window.addEventListener("scroll", () => {
-    const footer = document.querySelector("footer");
-    if (window.scrollY > 400) {
-        footer.style.display = "block";
-        } else {
-        footer.style.display = "none";
-        }
-    }
-    );
-
-
-
-
+  const footer = document.querySelector("footer");
+  if (window.scrollY > 400) {
+    footer.style.display = "block";
+  } else {
+    footer.style.display = "none";
+  }
+});
