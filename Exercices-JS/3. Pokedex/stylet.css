@@ -124,12 +124,6 @@ button:hover {
   }
 }
 
-@media screen and (max-width: 1200px) {
-  button {
-    width: 20vw;
-  }
-}
-
 .grid-pokedex {
   width: 85%;
   margin: auto;
