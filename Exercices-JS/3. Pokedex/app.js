@@ -165,10 +165,10 @@ window.addEventListener("scroll", () => {
   });
 });
 
-//only display the footer when the user scrolls down (800px under the bottom of the page)
+//only display the footer when the user scrolls down (2000px under the bottom of the page)
 window.addEventListener("scroll", () => {
   const footer = document.querySelector("footer");
-  if (window.scrollY > 800) {
+  if (window.scrollY > 5000) {
     footer.style.display = "block";
   } else {
     footer.style.display = "none";

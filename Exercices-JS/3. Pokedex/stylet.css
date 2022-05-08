@@ -219,13 +219,13 @@ button:hover {
 
 footer {
   display: none;
+  position: fixed;
   font-size: 0.6em;
   margin-top: 4em;
   text-align: center;
   border: 3px ridge #3b5da7;
   padding-top: 0.3em;
   color: #3b5da7;
-  position: fixed;
   bottom: 0;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
