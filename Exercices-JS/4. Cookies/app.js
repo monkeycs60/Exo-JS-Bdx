@@ -20,12 +20,7 @@ buttonCreate.addEventListener('click', (e) => {
     console.log(name, value, duration);
     //create a cookie with name, value and duration
     document.cookie = `${name}=${value}; expires=${new Date(duration).toUTCString()}`;
-    //display the cookie in the ol list
-    // const list = document.querySelector('.liste-cookie');
-    // const li = document.createElement('li');
-    // li.innerHTML = `Nom : ${name} // Valeur : ${value} // expire le ${duration}`;
-    // list.appendChild(li);
-    //clear the inputs
+    
     document.querySelector('.input1').value = '';
     document.querySelector('.input2').value = '';
     document.querySelector('.input3').value = '';
@@ -53,5 +48,19 @@ button2.addEventListener('click', (e) => {
         list.appendChild(li);
     }
 
+}
+);
+console.log(document.cookie);
+
+//addeventlistener to the li, when you click on an li it will delete the cookie
+const list = document.querySelector('.liste-cookie');
+list.addEventListener('click', (e) => {
+    console.log(e.target.innerHTML.split(' ')[1]);
+    if (e.target.tagName === 'LI') {
+        const name = e.target.innerHTML.split(' ')[3];
+        console.log(name);
+        document.cookie = `${name}=; expires=${new Date(0).toUTCString()}`;
+        e.target.remove();
+    }
 }
 );
