@@ -27,12 +27,6 @@ buttonCreate.addEventListener('click', (e) => {
 
 }
 );
-console.log(document.cookie.split(';'));
-console.log(document.cookie.split(';')[0].split('=')[0]);
-console.log(document.cookie.split(';')[0].split('=')[1]);
-console.log(document.cookie.split(';')[1].split('=')[0]);
-console.log(document.cookie.split(';')[1].split('=')[1]);
-console.log(document.cookie.split(';')[2].split('=')[0]);
 
 //addeventlistener to the button2 to display the name and the value for each cookie and their date of expiration in the ol list
 const button2 = document.querySelector('.button2');
@@ -55,12 +49,30 @@ console.log(document.cookie);
 //addeventlistener to the li, when you click on an li it will delete the cookie
 const list = document.querySelector('.liste-cookie');
 list.addEventListener('click', (e) => {
-    console.log(e.target.innerHTML.split(' ')[1]);
+    
+    console.log(e.target.innerHTML.split(' : ')[2].split(' // ')[0]);
+    
     if (e.target.tagName === 'LI') {
-        const name = e.target.innerHTML.split(' ')[3];
+        // const name = e.target.innerHTML.split(' ')[3];
+        const name = e.target.innerHTML.split(' : ')[1].split(' // ')[0];
+         
+
+       
         console.log(name);
         document.cookie = `${name}=; expires=${new Date(0).toUTCString()}`;
         e.target.remove();
     }
+    // if Valeur : undefined in li, then display an error message on info-cookie
+    if (e.target.innerHTML.split(' : ')[2].split(' // ')[0] === 'undefined') {
+        // create an li to the ol with the error message
+        const li = document.createElement('li');
+        li.innerHTML = `Ce cookie n'existe pas`;
+        document.querySelector('.info-cookie').appendChild(li);
+        
+    
+
+
+
+}
 }
 );
