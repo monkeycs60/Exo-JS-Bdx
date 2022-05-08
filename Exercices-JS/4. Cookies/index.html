@@ -1,15 +1,43 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cookies en JS</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/Exercices-JS/4. Cookies/stylet.css">
 </head>
+
 <body>
-<h1></h1>
+    <div class="container">
+        <header>
+            <div class="presentation">
+                <img src="/Exercices-JS/4. Cookies/ressources/cookies.png" alt="image de cookie">
+                <h1>Le créateur de Cookie</h1>
+                <img src="/Exercices-JS/4. Cookies/ressources/cookies.png" alt="image de cookie">
+            </div>
+        </header>
 
 
+     
+            <form>
+                <div class="input-line">
+                    <input class="input1" type="text" name="cookie-name" placeholder="" value="Cookie n°1">
+                    <input class="input2" type="text" name="cookie-value" placeholder="" value="Value of cookie">
+                    <input class="input3" type="date" name="cookie-expiration" placeholder="">
+                </div>
+
+                <div class="button-line">
+                    <button class="button1" id="create">Créer</button>
+                    <button class="button2" id="display">Afficher</button>
+                </div>
+            </form>
+       
+            <p class="info-cookie"></p>
+            <ol class="liste-cookie"></ol>
+
+    </div>
     <script src="app.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,57 @@
+
+const buttonCreate = document.querySelector('.button1');
+console.log(buttonCreate);
+// create a new date that is today's date
+const today = new Date();
+// create a new date that is 7 days from today
+const nextWeek = new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000);
+const nextWeekNumber = (nextWeek + '0').split(' ')[3];
+console.log(nextWeekNumber);
+//set input3 value to the nextWeek date
+const input3 = document.querySelector('.input3');
+input3.value = 
+
+buttonCreate.addEventListener('click', (e) => {
+    //prevent default
+    e.preventDefault();
+    const name = document.querySelector('.input1').value;
+    const value = document.querySelector('.input2').value;
+    const duration = document.querySelector('.input3').value;
+    console.log(name, value, duration);
+    //create a cookie with name, value and duration
+    document.cookie = `${name}=${value}; expires=${new Date(duration).toUTCString()}`;
+    //display the cookie in the ol list
+    // const list = document.querySelector('.liste-cookie');
+    // const li = document.createElement('li');
+    // li.innerHTML = `Nom : ${name} // Valeur : ${value} // expire le ${duration}`;
+    // list.appendChild(li);
+    //clear the inputs
+    document.querySelector('.input1').value = '';
+    document.querySelector('.input2').value = '';
+    document.querySelector('.input3').value = '';
+
+}
+);
+console.log(document.cookie.split(';'));
+console.log(document.cookie.split(';')[0].split('=')[0]);
+console.log(document.cookie.split(';')[0].split('=')[1]);
+console.log(document.cookie.split(';')[1].split('=')[0]);
+console.log(document.cookie.split(';')[1].split('=')[1]);
+console.log(document.cookie.split(';')[2].split('=')[0]);
+
+//addeventlistener to the button2 to display the name and the value for each cookie and their date of expiration in the ol list
+const button2 = document.querySelector('.button2');
+button2.addEventListener('click', (e) => {
+    e.preventDefault();
+    const list = document.querySelector('.liste-cookie');
+    list.innerHTML = '';
+    const cookies = document.cookie.split(';');
+    console.log(cookies);
+    for (let i = 0; i < cookies.length; i++) {
+        const li = document.createElement('li');
+        li.innerHTML = `Nom : ${cookies[i].split('=')[0]} // Valeur : ${cookies[i].split('=')[1]} // expire le ${cookies[i].split('=')[2]}`;
+        list.appendChild(li);
+    }
+
+}
+);
