@@ -18,9 +18,15 @@ buttonCreate.addEventListener('click', (e) => {
     const value = document.querySelector('.input2').value;
     const duration = document.querySelector('.input3').value;
     console.log(name, value, duration);
+    //if name is already in the cookies then display a message in the info-cookie, that the name is already used
+    if (document.cookie.includes(name)) {
+        document.querySelector('.info-cookie').innerHTML = 'The name is already used';
+    } else {
+
     //create a cookie with name, value and duration
     document.cookie = `${name}=${value}; expires=${new Date(duration).toUTCString()}`;
-    
+    }
+      
     document.querySelector('.input1').value = '';
     document.querySelector('.input2').value = '';
     document.querySelector('.input3').value = '';
@@ -41,6 +47,14 @@ button2.addEventListener('click', (e) => {
         li.innerHTML = `Nom : ${cookies[i].split('=')[0]} // Valeur : ${cookies[i].split('=')[1]} // expire le ${cookies[i].split('=')[2]}`;
         list.appendChild(li);
     }
+    console.log(cookies.length);
+
+//if cookie is empty display a message
+if (cookies === '') {
+    list.innerHTML = 'Aucun cookie';
+
+    
+}
 
 }
 );
@@ -63,16 +77,17 @@ list.addEventListener('click', (e) => {
         e.target.remove();
     }
     // if Valeur : undefined in li, then display an error message on info-cookie
-    if (e.target.innerHTML.split(' : ')[2].split(' // ')[0] === 'undefined') {
+    if (e.target.innerHTML.split(' : ')[2].split(' // ')[0] === "") {
         // create an li to the ol with the error message
         const li = document.createElement('li');
         li.innerHTML = `Ce cookie n'existe pas`;
         document.querySelector('.info-cookie').appendChild(li);
-        
-    
+        const cookies = document.cookie.split(';');   
+       console.log(cookies);
 
 
 
 }
 }
 );
+
