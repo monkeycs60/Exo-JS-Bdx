@@ -80,4 +80,10 @@ button {
   gap: 2em;
   margin-top: 1em;
 }
+
+.nom-bold {
+  font-weight: bold;
+  font-size: 1.3em;
+  color: #442020;
+}
 /*# sourceMappingURL=stylet.css.map */
