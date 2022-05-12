@@ -28,8 +28,38 @@ body {
   gap: 3em;
 }
 
+@media screen and (max-width: 1000px) {
+  .presentation {
+    margin-top: 2.5em;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .presentation img {
+    width: 3em;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .presentation img {
+    width: 2em;
+  }
+}
+
 h1 {
   font-size: 3.5em;
+}
+
+@media screen and (max-width: 1400px) {
+  h1 {
+    font-size: 2em;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  h1 {
+    font-size: 1.5em;
+  }
 }
 
 input {
@@ -37,6 +67,13 @@ input {
   height: 2em;
   font-size: 1.5em;
   text-align: center;
+}
+
+@media screen and (max-width: 1000px) {
+  input {
+    width: 80%;
+    height: 3em;
+  }
 }
 
 .input-line {
@@ -63,6 +100,14 @@ button {
   font-size: 1em;
 }
 
+@media screen and (max-width: 1000px) {
+  button {
+    width: 20%;
+    margin-top: 1em;
+    height: 2.5em;
+  }
+}
+
 .button-line {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -85,5 +130,55 @@ button {
   font-weight: bold;
   font-size: 1.3em;
   color: #442020;
+}
+
+.info-cookie {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2em;
+  margin-top: 2em;
+  text-align: center;
+}
+
+@media screen and (max-width: 1000px) {
+  .info-cookie {
+    font-size: calc(3.5vmin + 5px);
+  }
+}
+
+.liste-cookie {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 0.6em;
+  margin-top: 4em;
+  margin-left: 2em;
+}
+
+@media screen and (max-width: 1000px) {
+  .liste-cookie {
+    font-size: calc(3.5vmin + 5px);
+  }
 }
 /*# sourceMappingURL=stylet.css.map */
