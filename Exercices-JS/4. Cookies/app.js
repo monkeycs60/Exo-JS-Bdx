@@ -85,6 +85,11 @@ buttonCreate.addEventListener('click', (e) => {
 const button2 = document.querySelector('.button2');
 button2.addEventListener('click', (e) => {
     e.preventDefault();
+    if (document.cookie === '') {
+        document.querySelector('.info-cookie').innerHTML = 'Aucun cookie à afficher !';
+        
+    }
+    else {
     document.querySelector('.info-cookie').style.display = 'block';
     document.querySelector('.info-cookie').innerHTML = '';
     const list = document.querySelector('.liste-cookie');
@@ -97,6 +102,7 @@ button2.addEventListener('click', (e) => {
         list.appendChild(li);
     }
 
+}
 }
 );
 
@@ -124,3 +130,4 @@ list.addEventListener('click', (e) => {
     }
 
 });
+console.log(document.cookie);
