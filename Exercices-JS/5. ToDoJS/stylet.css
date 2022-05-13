@@ -10,11 +10,13 @@ body {
   color: #f1f1f1;
   font-family: Arial, Helvetica, sans-serif;
   font-size: calc(2vmin + 5px);
+  width: 100%;
+  height: 100%;
 }
 
 h1 {
   text-align: center;
-  font-size: 2em;
+  font-size: 2.5em;
   margin-top: 0.8em;
   font-weight: 800;
 }
@@ -39,8 +41,9 @@ h1 {
 }
 
 label {
-  font-size: 0.8em;
+  font-size: 0.9em;
   width: 50%;
+  font-style: italic;
 }
 
 input {
@@ -49,39 +52,44 @@ input {
   font-size: 1.5em;
   font-weight: 700;
   text-indent: 2em;
+  color: grey;
   font-family: 'Times New Roman', Times, serif;
 }
 
 input::-webkit-input-placeholder {
-  color: grey;
+  color: rgba(186, 197, 31, 0.863);
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
   font-size: 1.2em;
   font-weight: 700;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 input:-ms-input-placeholder {
-  color: grey;
+  color: rgba(186, 197, 31, 0.863);
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
   font-size: 1.2em;
   font-weight: 700;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 input::-ms-input-placeholder {
-  color: grey;
+  color: rgba(186, 197, 31, 0.863);
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
   font-size: 1.2em;
   font-weight: 700;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 input::placeholder {
-  color: grey;
+  color: rgba(186, 197, 31, 0.863);
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
   font-size: 1.2em;
   font-weight: 700;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 input:focus, input:active {
-  color: red;
+  color: grey;
   font-size: 1.5em;
   font-weight: 700;
   font-family: 'Times New Roman', Times, serif;
@@ -99,5 +107,72 @@ button {
   background: #f1f1f1;
   border: none;
   cursor: pointer;
+}
+
+.task-scheduled {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.5em;
+  height: 50%;
+  margin-top: 3em;
+}
+
+.div-task {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.5em;
+  width: 60%;
+  margin-top: 1em;
+  height: 2.5em;
+}
+
+.checkbox {
+  width: 20%;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  height: 1.5em;
+}
+
+.p-task {
+  width: 60%;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+.delete-button {
+  width: 8%;
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+  cursor: pointer;
+}
+
+.checked {
+  text-decoration: line-through;
+  color: yellow;
 }
 /*# sourceMappingURL=stylet.css.map */
