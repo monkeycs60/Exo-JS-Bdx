@@ -46,6 +46,12 @@ label {
   font-style: italic;
 }
 
+@media screen and (max-width: 1300px) {
+  label {
+    width: 70%;
+  }
+}
+
 input {
   width: 50%;
   height: 6em;
@@ -54,6 +60,12 @@ input {
   text-indent: 2em;
   color: grey;
   font-family: 'Times New Roman', Times, serif;
+}
+
+@media screen and (max-width: 1300px) {
+  input {
+    width: 70%;
+  }
 }
 
 input::-webkit-input-placeholder {
@@ -100,6 +112,12 @@ input:focus, input:active {
   margin-top: 0.5em;
 }
 
+@media screen and (max-width: 1300px) {
+  .bouton-socle {
+    width: 70%;
+  }
+}
+
 button {
   width: 30%;
   height: 1.5em;
@@ -144,8 +162,16 @@ button {
           align-items: center;
   gap: 0.5em;
   width: 60%;
+  background: white;
   margin-top: 1em;
-  height: 2.5em;
+  height: 3em;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 800px) {
+  .div-task {
+    height: 5em;
+  }
 }
 
 .checkbox {
@@ -154,6 +180,7 @@ button {
       -ms-flex-order: 1;
           order: 1;
   height: 1.5em;
+  background: yellow;
 }
 
 .p-task {
@@ -161,18 +188,24 @@ button {
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
+  color: black;
+  font-weight: 600;
 }
 
 .delete-button {
-  width: 8%;
+  width: 5.5%;
   -webkit-box-ordinal-group: 4;
       -ms-flex-order: 3;
           order: 3;
+  border: black solid 1px;
   cursor: pointer;
+}
+
+.delete-button img {
+  width: 5%;
 }
 
 .checked {
   text-decoration: line-through;
-  color: yellow;
 }
 /*# sourceMappingURL=stylet.css.map */
