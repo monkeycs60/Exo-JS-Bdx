@@ -68,7 +68,10 @@ h1 {
     height: 60%;
     border-radius: 10px;
     font-size: 1em;
-    cursor: pointer;  
+    cursor: pointer; 
+    &:hover {
+        background: white
+    } 
 }
 .start {
     @include boutons-style;

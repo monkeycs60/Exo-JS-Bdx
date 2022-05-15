@@ -99,6 +99,10 @@ h1 {
   cursor: pointer;
 }
 
+.start:hover {
+  background: white;
+}
+
 .pause {
   width: 100%;
   height: 60%;
@@ -107,12 +111,20 @@ h1 {
   cursor: pointer;
 }
 
+.pause:hover {
+  background: white;
+}
+
 .reset {
   width: 100%;
   height: 60%;
   border-radius: 10px;
   font-size: 1em;
   cursor: pointer;
+}
+
+.reset:hover {
+  background: white;
 }
 
 .cycles {
