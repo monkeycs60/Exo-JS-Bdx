@@ -35,6 +35,7 @@ h1 {
           align-items: center;
   height: 5em;
   width: 70%;
+  background: linear-gradient(80deg, #e6a52d, white);
 }
 
 .travail {
@@ -53,7 +54,7 @@ h1 {
           align-items: center;
   width: 100%;
   height: 100%;
-  background: #ffd194;
+  border-right: 2px solid black;
 }
 
 .repos {
@@ -72,7 +73,6 @@ h1 {
           align-items: center;
   width: 100%;
   height: 100%;
-  background: #ffd194;
 }
 
 .boutons {
@@ -96,6 +96,7 @@ h1 {
   height: 60%;
   border-radius: 10px;
   font-size: 1em;
+  cursor: pointer;
 }
 
 .pause {
@@ -103,6 +104,7 @@ h1 {
   height: 60%;
   border-radius: 10px;
   font-size: 1em;
+  cursor: pointer;
 }
 
 .reset {
@@ -110,6 +112,7 @@ h1 {
   height: 60%;
   border-radius: 10px;
   font-size: 1em;
+  cursor: pointer;
 }
 
 .cycles {
