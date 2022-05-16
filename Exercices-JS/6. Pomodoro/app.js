@@ -82,3 +82,4 @@ function timer() {
     
 }
 //addeventlistener to reset button
+// bouton pause
