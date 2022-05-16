@@ -30,43 +30,55 @@ start.addEventListener('click', () => {
     
     let interval = setInterval(() => {
         //create a variable for the time
-       
-        //create a variable for the minutes and seconds
-        let minutes = Math.floor(travailTime / 60);
-        let seconds = travailTime % 60;
-        //display the minutes and seconds in time
-        travail.innerHTML = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-        //if the time is equal to 0, stop the interval and display a message
-        console.log(travailTime);
-        if (travailTime > 0) {
-            travailTime--;
-            travail.innerHTML = `${Math.floor(travailTime / 60)}:${travailTime % 60 < 10 ? '0' : ''}${travailTime % 60}`;
-        } 
-        else if (travailTime === 0 && reposTime === 0) {
-            reposTime = 5;
+        reset.addEventListener('click', () => {
+            //stop the interval
+            clearInterval(interval);
+            //reset the time
             travailTime = 10;
+            reposTime = 5;
+            //display the time
             travail.innerHTML = `${Math.floor(travailTime / 60)}:${travailTime % 60 < 10 ? '0' : ''}${travailTime % 60}`;
             repos.innerHTML = `${Math.floor(reposTime / 60)}:${reposTime % 60 < 10 ? '0' : ''}${reposTime % 60}`;
-            compteur++;
-            console.log(compteur);
+            //reset the cycles
+            compteur = 0;
             cycles.innerHTML = `Nombre de cycles : ${compteur}`;
-        }
-        else if (travailTime === 0) {
-            reposTime--;
-            repos.innerHTML = `${Math.floor(reposTime / 60)}:${reposTime % 60 < 10 ? '0' : ''}${reposTime % 60}`;
-        }
-            
-            
-           
-            
-                
+        });
+         timer();
                 
            
         }
         , 1000);
-        //decrease the time by 1 second
+        
        
     });
+// addeventlistener to pause button, click, stop the interval
 
-    //repeat the timer for the number of cycles
+    
 
+function timer() {
+    let minutes = Math.floor(travailTime / 60);
+    let seconds = travailTime % 60;
+    //display the minutes and seconds in time
+    travail.innerHTML = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+    //if the time is equal to 0, stop the interval and display a message
+    console.log(travailTime);
+    if (travailTime > 0) {
+        travailTime--;
+        travail.innerHTML = `${Math.floor(travailTime / 60)}:${travailTime % 60 < 10 ? '0' : ''}${travailTime % 60}`;
+    } 
+    else if (travailTime === 0 && reposTime === 0) {
+        reposTime = 5;
+        travailTime = 10;
+        travail.innerHTML = `${Math.floor(travailTime / 60)}:${travailTime % 60 < 10 ? '0' : ''}${travailTime % 60}`;
+        repos.innerHTML = `${Math.floor(reposTime / 60)}:${reposTime % 60 < 10 ? '0' : ''}${reposTime % 60}`;
+        compteur++;
+        console.log(compteur);
+        cycles.innerHTML = `Nombre de cycles : ${compteur}`;
+    }
+    else if (travailTime === 0) {
+        reposTime--;
+        repos.innerHTML = `${Math.floor(reposTime / 60)}:${reposTime % 60 < 10 ? '0' : ''}${reposTime % 60}`;
+    }
+    
+}
+//addeventlistener to reset button
