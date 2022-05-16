@@ -1,6 +1,6 @@
 //create const for travail, repos, start, pause, reset, cycles
-const travail = document.querySelector('.travail');
-const repos = document.querySelector('.repos');
+const travail = document.querySelector('.travail-2');
+const repos = document.querySelector('.repos-2');
 const start = document.querySelector('.start');
 const pause = document.querySelector('.pause');
 const reset = document.querySelector('.reset');
@@ -21,9 +21,16 @@ repos.innerHTML = `${Math.floor(reposTime / 60)}:${reposTime % 60 < 10 ? '0' : '
 //addeventlistener to start button, click, begin the timer
 start.addEventListener('click', () => {
     //create a variable for the interval
+    
+    travailTime--; 
+    travail.innerHTML = `${Math.floor(travailTime / 60)}:${travailTime % 60 < 10 ? '0' : ''}${travailTime % 60}`;  
+    compteur = 0;
+        
+  
+    
     let interval = setInterval(() => {
         //create a variable for the time
-        let time = document.querySelector('.time');
+       
         //create a variable for the minutes and seconds
         let minutes = Math.floor(travailTime / 60);
         let seconds = travailTime % 60;
@@ -31,25 +38,35 @@ start.addEventListener('click', () => {
         travail.innerHTML = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
         //if the time is equal to 0, stop the interval and display a message
         console.log(travailTime);
-        if (travailTime <= 0) {
-            clearInterval(interval);
+        if (travailTime > 0) {
+            travailTime--;
+            travail.innerHTML = `${Math.floor(travailTime / 60)}:${travailTime % 60 < 10 ? '0' : ''}${travailTime % 60}`;
+        } 
+        else if (travailTime === 0 && reposTime === 0) {
+            reposTime = 5;
             travailTime = 10;
             travail.innerHTML = `${Math.floor(travailTime / 60)}:${travailTime % 60 < 10 ? '0' : ''}${travailTime % 60}`;
-            //begin the repos timer
-            let interval2 = setInterval(() => {
-                let minutes = Math.floor(reposTime / 60);
-                let seconds = reposTime % 60;
-                repos.innerHTML = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-                if (reposTime <= 0) {
-                    clearInterval(interval2);
-                    reposTime = 5;
-                    repos.innerHTML = `${Math.floor(reposTime / 60)}:${reposTime % 60 < 10 ? '0' : ''}${reposTime % 60}`;
-                }
-                //decrease the reposTime by 1
-                reposTime--;
-            }, 1000);
+            repos.innerHTML = `${Math.floor(reposTime / 60)}:${reposTime % 60 < 10 ? '0' : ''}${reposTime % 60}`;
+            compteur++;
+            console.log(compteur);
+            cycles.innerHTML = `Nombre de cycles : ${compteur}`;
         }
+        else if (travailTime === 0) {
+            reposTime--;
+            repos.innerHTML = `${Math.floor(reposTime / 60)}:${reposTime % 60 < 10 ? '0' : ''}${reposTime % 60}`;
+        }
+            
+            
+           
+            
+                
+                
+           
+        }
+        , 1000);
         //decrease the time by 1 second
-        travailTime--;
-    }, 1000);
-});
+       
+    });
+
+    //repeat the timer for the number of cycles
+
