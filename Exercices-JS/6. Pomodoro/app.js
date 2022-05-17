@@ -7,8 +7,8 @@ const reset = document.querySelector('.reset');
 const cycles = document.querySelector('.cycles');
 
 //create two variables for travail and repos
-let travailTime = 10;
-let reposTime = 5;
+let travailTime = 1800;
+let reposTime = 300;
 let pauseBtn = false;
 let checkInterval = false;
 
@@ -46,8 +46,8 @@ start.addEventListener('click', () => {
         clearInterval(interval);
         checkInterval = false;
         //reset the time
-        travailTime = 10;
-        reposTime = 5;
+        travailTime = 1800;
+        reposTime = 300;
         //display the time
         travail.innerHTML = `${Math.floor(travailTime / 60)}:${travailTime % 60 < 10 ? '0' : ''}${travailTime % 60}`;
         repos.innerHTML = `${Math.floor(reposTime / 60)}:${reposTime % 60 < 10 ? '0' : ''}${reposTime % 60}`;
@@ -76,8 +76,8 @@ function timer() {
         travail.innerHTML = `${Math.floor(travailTime / 60)}:${travailTime % 60 < 10 ? '0' : ''}${travailTime % 60}`;
     } 
     else if (pauseBtn === false && travailTime === 0 && reposTime === 0) {
-        reposTime = 5;
-        travailTime = 10;
+        reposTime = 300;
+        travailTime = 1800;
         travail.innerHTML = `${Math.floor(travailTime / 60)}:${travailTime % 60 < 10 ? '0' : ''}${travailTime % 60}`;
         repos.innerHTML = `${Math.floor(reposTime / 60)}:${reposTime % 60 < 10 ? '0' : ''}${reposTime % 60}`;
         compteur++;
