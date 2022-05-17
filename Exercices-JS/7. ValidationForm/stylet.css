@@ -46,6 +46,8 @@ input {
   height: 3em;
   font-size: 0.5em;
   margin-bottom: 0.6em;
+  background: lightgray;
+  text-indent: 0.2em;
 }
 
 button {
