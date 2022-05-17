@@ -9,6 +9,8 @@ const cycles = document.querySelector('.cycles');
 //create two variables for travail and repos
 let travailTime = 10;
 let reposTime = 5;
+let pauseBtn = false;
+let checkInterval = false;
 
 // display travailTime in travail and convert it to minutes and seconds
 // add a zero before the minutes and seconds if they are less than 10
@@ -21,6 +23,10 @@ repos.innerHTML = `${Math.floor(reposTime / 60)}:${reposTime % 60 < 10 ? '0' : '
 //addeventlistener to start button, click, begin the timer
 start.addEventListener('click', () => {
     //create a variable for the interval
+    if(checkInterval === false) {
+
+        checkInterval = true;
+        
     
     travailTime--; 
     travail.innerHTML = `${Math.floor(travailTime / 60)}:${travailTime % 60 < 10 ? '0' : ''}${travailTime % 60}`;  
@@ -30,25 +36,28 @@ start.addEventListener('click', () => {
     
     let interval = setInterval(() => {
         //create a variable for the time
-        reset.addEventListener('click', () => {
-            //stop the interval
-            clearInterval(interval);
-            //reset the time
-            travailTime = 10;
-            reposTime = 5;
-            //display the time
-            travail.innerHTML = `${Math.floor(travailTime / 60)}:${travailTime % 60 < 10 ? '0' : ''}${travailTime % 60}`;
-            repos.innerHTML = `${Math.floor(reposTime / 60)}:${reposTime % 60 < 10 ? '0' : ''}${reposTime % 60}`;
-            //reset the cycles
-            compteur = 0;
-            cycles.innerHTML = `Nombre de cycles : ${compteur}`;
-        });
-         timer();
-                
-           
-        }
-        , 1000);
+        timer();
         
+        
+    }
+    , 1000);
+    reset.addEventListener('click', () => {
+        //stop the interval
+        clearInterval(interval);
+        checkInterval = false;
+        //reset the time
+        travailTime = 10;
+        reposTime = 5;
+        //display the time
+        travail.innerHTML = `${Math.floor(travailTime / 60)}:${travailTime % 60 < 10 ? '0' : ''}${travailTime % 60}`;
+        repos.innerHTML = `${Math.floor(reposTime / 60)}:${reposTime % 60 < 10 ? '0' : ''}${reposTime % 60}`;
+        //reset the cycles
+        compteur = 0;
+        cycles.innerHTML = `Nombre de cycles : ${compteur}`;
+    });
+    } else {
+        return
+    }
        
     });
 // addeventlistener to pause button, click, stop the interval
@@ -62,11 +71,11 @@ function timer() {
     travail.innerHTML = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
     //if the time is equal to 0, stop the interval and display a message
     console.log(travailTime);
-    if (travailTime > 0) {
+    if ( pauseBtn === false && travailTime > 0) {
         travailTime--;
         travail.innerHTML = `${Math.floor(travailTime / 60)}:${travailTime % 60 < 10 ? '0' : ''}${travailTime % 60}`;
     } 
-    else if (travailTime === 0 && reposTime === 0) {
+    else if (pauseBtn === false && travailTime === 0 && reposTime === 0) {
         reposTime = 5;
         travailTime = 10;
         travail.innerHTML = `${Math.floor(travailTime / 60)}:${travailTime % 60 < 10 ? '0' : ''}${travailTime % 60}`;
@@ -75,11 +84,23 @@ function timer() {
         console.log(compteur);
         cycles.innerHTML = `Nombre de cycles : ${compteur}`;
     }
-    else if (travailTime === 0) {
+    else if (pauseBtn === false && travailTime === 0) {
         reposTime--;
         repos.innerHTML = `${Math.floor(reposTime / 60)}:${reposTime % 60 < 10 ? '0' : ''}${reposTime % 60}`;
     }
     
 }
-//addeventlistener to reset button
-// bouton pause
+//pause button
+pause.addEventListener('click', () => {
+    pauseBtn = !pauseBtn;
+    //change pause text to "Reprendre"
+    if (pauseBtn === true) {
+        pause.innerHTML = 'Reprendre';
+        // color pause button to red
+        pause.style.backgroundColor = 'green';
+    } else {
+        pause.innerHTML = 'Pause';
+        // color pause button to green
+        pause.style.backgroundColor = 'red';
+    }
+});
