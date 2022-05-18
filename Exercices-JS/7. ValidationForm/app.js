@@ -4,6 +4,9 @@ const nom = document.querySelector('#nom');
 const username = document.querySelector('.username');
 const mail = document.querySelector('#mail');
 const mdp = document.querySelector('#mdp');
+const mdp2 = document.querySelector('#mdp2');
+const blockConfirm = document.querySelector('.confirm');
+
 const divStrength = document.querySelector('.strength');
 const p = document.createElement('p');
 const pMail = document.createElement('p');
@@ -13,6 +16,7 @@ const pMdp3 = document.createElement('p');
 const pMdp4 = document.createElement('p');
 const blockMail = document.querySelector('.email');
 const blockMdp = document.querySelector('.password');
+const confirmMDP = document.createElement('p');
 let activeClass = document.querySelectorAll('.active');
 
 
@@ -182,8 +186,10 @@ mdp.addEventListener('keyup', function (e) {
         pMdp2.style.order = '1';
         //appendchild to blockMdp
         divStrength.appendChild(pMdp2);
+        divStrength.removeChild(pMdp3);
+        divStrength.removeChild(pMdp4);
     }   
-    else if (e.target.value.length < 9) {
+    else if (e.target.value.length >= 5 && e.target.value.length < 9) {
         pMdp3.innerHTML = 'moyen';
         pMdp3.classList.add('mdpStrength');
         //pmdp2 text align center
@@ -196,9 +202,10 @@ mdp.addEventListener('keyup', function (e) {
         pMdp3.style.order = '2';
         //appendchild to blockMdp
         divStrength.appendChild(pMdp3);
+        divStrength.removeChild(pMdp4);
 
     }   
-    else if (e.target.value.length < 13) {
+    else if (e.target.value.length >= 9) {
         pMdp4.innerHTML = 'fort';
         pMdp4.classList.add('mdpStrength');
         //pmdp2 text align center
@@ -210,7 +217,45 @@ mdp.addEventListener('keyup', function (e) {
         pMdp4.style.order = '3';
         //appendchild to blockMdp
         divStrength.appendChild(pMdp4);
+    
 
 
     }   
+});
+
+//addeventlistener to mdp2
+mdp2.addEventListener('keyup', function (e) {
+    //if the password is different from mdp
+    if (mdp.value !== e.target.value) {
+        confirmMDP.innerHTML = 'Les mots de passe ne correspondent pas';
+        confirmMDP.classList.add('errorTxt');
+        //add red border to input
+        mdp2.classList.add('errorTxt');
+        mdp2.classList.add('errorInput');
+        //add red border to nom when class is active
+        blockConfirm.appendChild(confirmMDP);
+        //
+        mdp2.style.backgroundImage = 'url("/Exercices-JS/7. ValidationForm/ressources/error.svg")';
+         //mdp background position to right 95%
+        mdp2.style.backgroundPosition = '95%';
+        //mdp background repeat : no repeat
+        mdp2.style.backgroundRepeat = 'no-repeat';
+        //mdp bg size to 50px
+        mdp2.style.backgroundSize = '30px';
+        //mdp bg padding right
+    }
+
+    else {
+        //remove p from username
+        blockConfirm.removeChild(confirmMDP);
+        //remove red border from input
+        mdp2.classList.remove('errorInput');
+        mdp2.classList.remove('errorTxt');
+        //add success border to input
+        mdp2.classList.add('successInput');
+        //add green font to input
+        mdp2.classList.add('successTxt');
+
+        mdp2.style.backgroundImage = 'url("/Exercices-JS/7. ValidationForm/ressources/check.svg")';
+    }
 });
