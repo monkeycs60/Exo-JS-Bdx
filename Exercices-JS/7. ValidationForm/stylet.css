@@ -153,4 +153,28 @@ button {
 button:hover {
   background: gold;
 }
+
+.errorTxt {
+  color: red;
+  font-size: 0.6em;
+  margin-top: 0.5em;
+  font-style: italic;
+}
+
+.errorInput {
+  border: 1px solid red;
+  color: red;
+}
+
+.successTxt {
+  color: green;
+  font-size: 0.6em;
+  margin-top: 0.5em;
+  font-style: italic;
+}
+
+.successInput {
+  border: 1px solid green;
+  color: green;
+}
 /*# sourceMappingURL=stylet.css.map */
