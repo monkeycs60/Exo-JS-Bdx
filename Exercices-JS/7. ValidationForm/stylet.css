@@ -10,6 +10,7 @@ body {
   height: 100%;
   font-size: calc(10px + 2vmin);
   background: grey;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .card-form {
@@ -17,7 +18,6 @@ body {
   margin-top: 5em;
   background: white;
   width: 20%;
-  height: 18em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -28,6 +28,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  border-radius: 10px;
 }
 
 h2 {
@@ -54,9 +55,16 @@ button {
   display: block;
   margin: auto;
   margin-top: 1em;
+  margin-bottom: 1.5em;
   height: 2em;
   width: 100%;
   font-size: 0.7em;
   background: #ffbb00;
+  border: none;
+  border-radius: 10px;
+}
+
+button:hover {
+  background: gold;
 }
 /*# sourceMappingURL=stylet.css.map */
