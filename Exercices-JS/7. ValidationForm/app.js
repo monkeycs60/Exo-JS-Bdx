@@ -26,8 +26,10 @@ nom.addEventListener('keyup', function (e) {
     nom.classList.add('errorInput');
     //add red border to nom when class is active
     username.appendChild(p);
-   
+   //add error.svg to nom
+    document.querySelector('input[name="nom"]').innerHTML += `<img src="/Exercices-JS/7. ValidationForm/ressources/error.svg" width="20" alt="error" class="errorImg">`;
   
+
     
         
     } 
