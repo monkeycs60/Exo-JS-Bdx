@@ -15,47 +15,82 @@ body {
     margin: auto;
     margin-top: 5em;
     background: white;
-    width: 20%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+    width: 25%;
     border-radius: 10px;
    
 }
 //select everything except h2
-
+.formulaire {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 0.8em;
+    
+}
 
 h2 {
+    font-size: 2em;
     text-align: center;
     margin: 0.5em 0 0.5em 0;
 }
 
+
+@mixin flexDiv {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 1em;
+    gap: 0.3em;
+    width: 80%
+}
+    
+
+
+.username {
+@include flexDiv;
+}
+
+.email {
+    @include flexDiv;
+}
+
+.password {
+    @include flexDiv;
+}
+
+
+.confirm {
+    @include flexDiv;
+}
+
+.btn {
+width: 80%;
+}
+
 label {
-    display: block;
-    font-size: 0.8em;
-    margin-bottom: 0.2em;
+
 }
+
 input {
-    width: 100%;
-    height: 3em;
-    font-size: 0.5em;
-    margin-bottom: 0.6em;
+    height: 4em;
+    text-indent: 1em;
     background: lightgray;
-    text-indent: 0.2em;
 }
+
 button {
-    display: block;
-    margin: auto;
-    margin-top: 1em;
-    margin-bottom: 1.5em;
     height: 2em;
     width: 100%;
-    font-size: 0.7em;
+    margin-bottom: 2em;
+    margin-top: 1em;
+    font-size: 1em;
     background: rgb(255, 187, 0);
     border: none;
     border-radius: 10px;
     &:hover {
         background: rgb(255, 215, 0)
     }
-    
 }
