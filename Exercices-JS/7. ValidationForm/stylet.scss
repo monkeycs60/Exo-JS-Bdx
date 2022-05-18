@@ -81,6 +81,10 @@ input {
     background: lightgray;
 }
 
+::placeholder {
+    font-size: 1.5em;
+}
+
 button {
     height: 2em;
     width: 100%;

@@ -123,6 +123,22 @@ input {
   background: lightgray;
 }
 
+::-webkit-input-placeholder {
+  font-size: 1.5em;
+}
+
+:-ms-input-placeholder {
+  font-size: 1.5em;
+}
+
+::-ms-input-placeholder {
+  font-size: 1.5em;
+}
+
+::placeholder {
+  font-size: 1.5em;
+}
+
 button {
   height: 2em;
   width: 100%;
