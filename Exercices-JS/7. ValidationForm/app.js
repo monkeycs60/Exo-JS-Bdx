@@ -6,6 +6,7 @@ const mail = document.querySelector('#mail');
 const mdp = document.querySelector('#mdp');
 const mdp2 = document.querySelector('#mdp2');
 const blockConfirm = document.querySelector('.confirm');
+const bouton = document.querySelector('button');
 
 const divStrength = document.querySelector('.strength');
 const p = document.createElement('p');
@@ -258,4 +259,14 @@ mdp2.addEventListener('keyup', function (e) {
 
         mdp2.style.backgroundImage = 'url("/Exercices-JS/7. ValidationForm/ressources/check.svg")';
     }
+});
+
+//button add eventlistener
+bouton.addEventListener('click', function (e) {
+    e.preventDefault();
+    console.log(`Nom utilisateur : ${nom.value}`);
+    console.log(`Adresse mail : ${mail.value}`);
+    console.log(`Votre mot de passe est : ${mdp.value}`);
+    console.log(`vous avez bien confirmé votre mot de passe`);
+
 });
