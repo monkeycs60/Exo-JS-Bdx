@@ -227,7 +227,7 @@ mdp.addEventListener('keyup', function (e) {
 //addeventlistener to mdp2
 mdp2.addEventListener('keyup', function (e) {
     //if the password is different from mdp
-    if (mdp.value !== e.target.value) {
+    if (e.target.length === 0 || e.target.value !== mdp.value || e.target.value.length != mdp.value.length) {
         confirmMDP.innerHTML = 'Les mots de passe ne correspondent pas';
         confirmMDP.classList.add('errorTxt');
         //add red border to input
