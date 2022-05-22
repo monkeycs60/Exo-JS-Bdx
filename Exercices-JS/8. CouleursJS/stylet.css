@@ -1,0 +1,100 @@
+*, ::before, ::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: calc(2vmin + 5px);
+  width: 100%;
+  height: 100vh;
+}
+
+.container {
+  background: grey;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1.5em;
+  height: 100%;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.couleurs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 20%;
+}
+
+.couleur1, .couleur2 {
+  border: 1px solid white;
+  border-radius: 10px;
+  width: 20%;
+  text-align: center;
+  height: 20%;
+}
+
+.cursor {
+  height: 5%;
+  width: 20%;
+}
+
+#ranged {
+  width: 100%;
+  border-radius: 10px;
+  height: 100%;
+}
+
+.boutons {
+  width: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 5%;
+}
+
+.btn1, .btn2 {
+  width: 15%;
+  border-radius: 10px;
+}
+
+.btn1 img, .btn2 img {
+  width: 100%;
+  height: 100%;
+}
+
+.btn3 {
+  width: 25%;
+  border-radius: 10px;
+  font-size: 1em;
+}
+/*# sourceMappingURL=stylet.css.map */

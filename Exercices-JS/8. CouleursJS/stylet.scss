@@ -1,0 +1,82 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-size: calc(2vmin + 5px);
+    width: 100%;
+    height: 100vh;
+}
+.container{
+    background: grey;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+   
+}
+.couleurs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+}
+.couleur1 {
+    border: 1px solid white;
+    border-radius: 10px;
+    width: 20%;
+    text-align: center;
+    height: 20%
+}
+.couleur2 {
+    @extend .couleur1;
+}
+.cursor {
+    //do a progress bar
+   
+    height: 5%;
+    width: 20%;
+}
+#ranged {
+    width: 100%;
+    border-radius: 10px;
+    height: 100%
+}
+.boutons {
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 5%;
+   
+}
+.btn1, .btn2 {
+width: 15%;
+border-radius: 10px;
+img {
+    width: 100%;
+    height: 100%;
+}
+
+}
+.btn1 {
+    //bg image plus.svg
+    
+}
+.btn2 {
+    //bg image moins.svg
+   
+}
+.btn3 {
+    width: 25%;
+    border-radius: 10px;
+    font-size: 1em;
+}
+
