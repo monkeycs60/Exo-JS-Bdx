@@ -17,6 +17,21 @@ body {
     background: white;
     width: 25%;
     border-radius: 10px;
+    @media screen and (max-width: 2000px) {
+        width: 30%; 
+    }
+    @media screen and (max-width: 1600px) {
+        width: 40%; 
+        margin-top: 3.5em;
+    }
+    @media screen and (max-width: 1000px) {
+        width: 55%; 
+        margin-top: 2.5em;
+    }
+    @media screen and (max-width: 700px) {
+        width: 70%; 
+    }
+        
    
 }
 //select everything except h2
@@ -83,6 +98,9 @@ input {
 
 ::placeholder {
     font-size: 1.5em;
+    @media screen and (max-width: 700px) {
+        font-size: 1em;
+    }
 }
 
 button {
