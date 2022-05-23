@@ -23,8 +23,8 @@ couleur1[0].style.background = colorTab[0];
 couleur2[0].style.background = colorTab[1];
 
 
-document.querySelector('.couleur1').value += colorTab[0];
-document.querySelector('.couleur2').value += colorTab[1];
+document.querySelector('.couleur1').value += colorTab[0].toUpperCase();
+document.querySelector('.couleur2').value += colorTab[1].toUpperCase();
 
 
 
@@ -56,7 +56,7 @@ btn1.addEventListener('click', function() {
     const couleurRandom = '#' + Math.floor(Math.random() * 16777215).toString(16);
     div.style.background = couleurRandom;
     //div.value is equal to its background
-    div.innerHTML += couleurRandom;
+    div.innerHTML += couleurRandom.toUpperCase();
     colorTab.push(couleurRandom);
     ensembleCouleurs.appendChild(div);
     //add div.style.background to container.style.background linear gradient
@@ -95,7 +95,7 @@ btn3.addEventListener('click', function() {
         
         //set color to ensembleCouleurs children div background
         ensembleCouleurs.children[index].style.background = randomTab[index];
-        ensembleCouleurs.children[index].value = randomTab[index];
+        ensembleCouleurs.children[index].value = randomTab[index].toUpperCase();
 
         
     }
