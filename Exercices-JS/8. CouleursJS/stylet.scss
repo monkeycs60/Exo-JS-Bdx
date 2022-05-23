@@ -37,6 +37,12 @@ body {
     height: 100%;
     font-size: 1.5em;
     text-shadow: white 0px 0px 2px;
+    @media screen and (max-width: 1500px) {
+        width: 40%; 
+    }
+    @media screen and (max-width: 700px) {
+        width: 60%; 
+    }
 }
 .couleur2 {
     @extend .couleur1;
@@ -46,6 +52,14 @@ body {
    
     height: 5%;
     width: 20%;
+    @media screen and (max-width: 1500px) {
+        width: 40%; 
+        height: 8%;
+    }
+    @media screen and (max-width: 700px) {
+        width: 60%; 
+    }
+
 }
 #ranged {
     width: 100%;
@@ -58,6 +72,19 @@ body {
     flex-direction: row;
     justify-content: space-around;
     height: 5%;
+    @media screen and (max-width: 2200px) {
+       width: 30%;    
+    }
+    @media screen and (max-width: 1500px) {
+       width: 40%;    
+    }
+    @media screen and (max-width: 1000px) {
+       width: 50%;    
+    }
+    @media screen and (max-width: 700px) {
+       width: 65%;    
+       height: 6%;
+    }
    
 }
 .btn1, .btn2 {
