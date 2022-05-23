@@ -10,6 +10,8 @@ const colorFormula2 = '#' + Math.floor(Math.random() * 16777215).toString(16);
 let colorTab = [colorFormula, colorFormula2];
 console.log(colorTab);
 
+let randomTab = [];
+
 const range = document.getElementById('range');
 const cursor = document.querySelector('.btn0');
 
@@ -24,10 +26,7 @@ couleur2[0].style.background = colorTab[1];
 document.querySelector('.couleur1').value += colorTab[0];
 document.querySelector('.couleur2').value += colorTab[1];
 
-//change text color of couleur1 to colorFormula2
-couleur1[0].style.color = colorFormula[2];
-//change text color of couleur2 to colorFormula
-couleur2[0].style.color = colorFormula[1];
+
 
 //set a linear gradient background for container with the value of colorFormula and colorFormula2
 container.style.background = `linear-gradient(to right, ${colorTab})`;
@@ -84,6 +83,29 @@ btn2.addEventListener('click', function() {
 
 //btn3, when click, reload window   and reset the linear gradient
 btn3.addEventListener('click', function() {
-    window.location.reload();
+    //foreach color in colorTab, replace each value with a new value of '#' + Math.floor(Math.random() * 16777215).toString(16)
+    
+    for (let index = 0; index < colorTab.length; index++) {
+        const color = '#' + Math.floor(Math.random() * 16777215).toString(16);
+        console.log(color);
+        //push to randomTab the new value of color
+        randomTab.push(color);
+        //replace colorTab value with randomTab value
+        console.log(randomTab);
+        
+        //set color to ensembleCouleurs children div background
+        ensembleCouleurs.children[index].style.background = randomTab[index];
+        ensembleCouleurs.children[index].value = randomTab[index];
+
+        
+    }
+  
+    colorTab = randomTab;
+  
+    container.style.background = `linear-gradient(to right, ${colorTab})`;
+    console.log(colorTab);
+    randomTab = [];
+
+    // window.location.reload();
 }
 );
